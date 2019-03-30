@@ -1,5 +1,5 @@
 # Waterfox Installation and uninstallation script (based on Cyberfox's script)
-# Version: 1.0
+# Version: 1.1
 
 #!/bin/bash
 
@@ -24,7 +24,6 @@ Desktop="${XDG_DESKTOP_DIR:-~/Desktop}"
 Applications=/usr/share/applications
 InstallDirectory=$HOME/Apps
 
-# Check if the script is in the right place before checking file hashes.
 echo "Do you wish to install Waterfox now?"
 select yn in "Install" "Uninstall" "Quit"; do
     case $yn in
@@ -94,8 +93,7 @@ END
 
             # Create start menu shortcut
             echo "Generating start menu shortcut..."
-            mkdir $InstallDirectory/waterfox/tmp
-            cat > $InstallDirectory/waterfox/tmp/waterfox.desktop <<EOF
+            sudo install -Dm644 /dev/stdin "$Applications/waterfox.desktop" <<EOF
 [Desktop Entry]
 Version=1.0
 Name=Waterfox
@@ -282,9 +280,6 @@ Name[uk]=Відкрити нове вікно у потайливому режи
 Name[zh_TW]=開啟新隱私瀏覽視窗
 Exec=waterfox -private-window
 EOF
-            echo "Installing start menu shortcut..."
-            chmod +x $InstallDirectory/waterfox/tmp/waterfox.desktop
-            sudo cp $InstallDirectory/waterfox/tmp/waterfox.desktop $Applications/
 
             # Install optional desktop shortcut
             echo "Do you wish to add a desktop shortcut (Root priveleges are required)?"
@@ -302,7 +297,6 @@ EOF
         else
             echo "You must place this script next to the 'waterfox' tar.bz2 package."
         fi;
-        rm -rf $InstallDirectory/waterfox/tmp
         break;;
         Uninstall )
 
