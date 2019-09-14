@@ -29,7 +29,7 @@ select yn in "Install" "Uninstall" "Quit"; do
 
         # Check if more than 1 package exist.
         if [ "$PackageCount" -gt 1 ]; then
-            echo "You have to many packages [$PackageCount] in this directory, I am unable to compute what package to install, Please remove the other packages so I no longer get confused!"
+            echo "You have too many packages [$PackageCount] in this directory, I am unable to compute what package to install, Please remove the other packages so I no longer get confused!"
             notify-send "A error has occured"
             exit 0
         fi
