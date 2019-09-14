@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Current (based on Cyberfox's script)
-# Version: 1.0
+# Version: 1.0.1
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -17,10 +17,8 @@ mapfile -t Package < <(find "$Dir" -type f -name 'waterfox-68*.tar.bz2' )
 
 # Desktop shortcut path, Applications shortcut path, Waterfox install path.
 # We need to know path to Desktop for not English operating systems
-: "${XDG_CONFIG_HOME:=~/.config}"
-[ -f "${XDG_CONFIG_HOME}/user-dirs.dirs" ] && . "${XDG_CONFIG_HOME}/user-dirs.dirs"
 
-Desktop="${XDG_DESKTOP_DIR:-~/Desktop}"
+Desktop="$(xdg-user-dir DESKTOP)"
 Applications=/usr/share/applications
 InstallDirectory=$HOME/Apps
 
@@ -50,7 +48,7 @@ select yn in "Install" "Uninstall" "Quit"; do
 
             # Unpack Waterfox Current into the apps directory, Remove existing waterfox-current folder.
             if [ -d "$InstallDirectory"/waterfox-current ]; then
-                echo "Removing older install $InstallDirectory/waterfox-current-current"
+                echo "Removing older install $InstallDirectory/waterfox-current"
                 rm -rvf "$InstallDirectory"/waterfox-current
             fi
 
@@ -85,7 +83,7 @@ END
                 dict_path="/usr/share/myspell"
             fi
 
-            sudo install -Dm644 /dev/stdin "$InstallDirectory"/waterfox-current/browser/defaults/preferences/vendor.js<<EOF
+            install -Dm644 /dev/stdin "$InstallDirectory"/waterfox-current/browser/defaults/preferences/vendor.js<<EOF
 
 // Disable default browser checking
 pref("browser.shell.checkDefaultBrowser", false);
@@ -335,8 +333,8 @@ EOF
         # Remove menu icon if exists.
         # Requires admin permissions to write the file to /usr/share/applications directory.
         # This should only prompt if the user installed it, Meaning if the check for the file returns true.
-        if [ -f $Applications//waterfox-current.desktop ]; then
-            sudo rm -vrf $Applications//waterfox-current.desktop
+        if [ -f $Applications/waterfox-current.desktop ]; then
+            sudo rm -vrf $Applications/waterfox-current.desktop
         fi
 
         # Remove wrapper

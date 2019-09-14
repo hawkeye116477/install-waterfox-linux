@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Classic (based on Cyberfox's script)
-# Version: 1.2
+# Version: 1.2.1
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -17,10 +17,8 @@ mapfile -t Package < <(find "$Dir" -type f -name 'waterfox-*.tar.bz2' ! -iname '
 
 # Desktop shortcut path, Applications shortcut path, Waterfox install path.
 # We need to know path to Desktop for not English operating systems
-: "${XDG_CONFIG_HOME:=~/.config}"
-[ -f "${XDG_CONFIG_HOME}/user-dirs.dirs" ] && . "${XDG_CONFIG_HOME}/user-dirs.dirs"
 
-Desktop="${XDG_DESKTOP_DIR:-~/Desktop}"
+Desktop="$(xdg-user-dir DESKTOP)"
 Applications=/usr/share/applications
 InstallDirectory=$HOME/Apps
 
