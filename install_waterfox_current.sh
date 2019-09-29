@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Current (based on Cyberfox's script)
-# Version: 1.0.2
+# Version: 1.0.3
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -61,8 +61,14 @@ select yn in "Install" "Uninstall" "Quit"; do
             # Install a wrapper
             echo "Creating desktop entry (Root priveleges are required)..."
             sudo install -Dm755 /dev/stdin "/usr/bin/waterfox-current" <<END
-#!/bin/sh
-exec ~/Apps/waterfox-current/waterfox "\$@"
+#!/bin/bash
+
+if [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
+    export GTK_USE_PORTAL=1
+fi
+
+exec ~/Apps/waterfox-current/waterfox "$@"
+
 END
 
             # Create symlinks
@@ -222,7 +228,7 @@ Keywords[uk]=Internet;WWW;Browser;Web;Explorer;Інтернет;мережа;п�
 Keywords[vi]=Internet;WWW;Browser;Web;Explorer;Trình duyệt;Trang web;
 Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;水狐;Waterfox;wf;互联网;网站;
 Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;水狐;
-Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-current %u"
+Exec=waterfox-current %u
 Terminal=false
 X-MuiltpleArgs=false
 Type=Application
@@ -271,7 +277,7 @@ Name[uk]=Відкрити нове вікно
 Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開啟新視窗
-Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-current -new-window"
+Exec=waterfox-current -new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -292,7 +298,7 @@ Name[sl]=Odpri novo okno zasebnega brskanja
 Name[tr]=Yeni bir pencere aç
 Name[uk]=Відкрити нове вікно у потайливому режимі
 Name[zh_TW]=開啟新隱私瀏覽視窗
-Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-current -private-window"
+Exec=waterfox-current -private-window
 EOF
 
             # Install optional desktop shortcut
