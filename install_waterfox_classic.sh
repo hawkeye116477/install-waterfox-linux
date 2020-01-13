@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Classic (based on Cyberfox's script)
-# Version: 1.2.1
+# Version: 1.2.2
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -10,10 +10,10 @@ Dir=$(cd "$(dirname "$0")" && pwd)
 cd "$Dir" || exit
 
 # Count how many packages in the directory, If there is more then one the script may break or have undesired effect.
-PackageCount=$(find . -name 'waterfox-*.tar.bz2' ! -iname 'waterfox-68*.tar.bz2' | awk 'END { print NR }')
+PackageCount=$(find . -name 'waterfox-classic*.tar.bz2' | awk 'END { print NR }')
 
 # Make package name editable in single place in the event of file naming change.
-mapfile -t Package < <(find "$Dir" -type f -name 'waterfox-*.tar.bz2' ! -iname 'waterfox-68*.tar.bz2' )
+mapfile -t Package < <(find "$Dir" -type f -name 'waterfox-classic*.tar.bz2')
 
 # Desktop shortcut path, Applications shortcut path, Waterfox install path.
 # We need to know path to Desktop for not English operating systems
@@ -212,7 +212,7 @@ Type=Application
 Icon=waterfox
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-StartupWMClass=Waterfox
+StartupWMClass=WaterfoxClassic
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
 

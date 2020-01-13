@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Current (based on Cyberfox's script)
-# Version: 1.0.3
+# Version: 1.0.4
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -10,10 +10,10 @@ Dir=$(cd "$(dirname "$0")" && pwd)
 cd "$Dir" || exit
 
 # Count how many packages in the directory, If there is more then one the script may break or have undesired effect.
-PackageCount=$(find . -name 'waterfox-68*.tar.bz2' | awk 'END { print NR }')
+PackageCount=$(find . -name 'waterfox-current*.tar.bz2' | awk 'END { print NR }')
 
 # Make package name editable in single place in the event of file naming change.
-mapfile -t Package < <(find "$Dir" -type f -name 'waterfox-68*.tar.bz2' )
+mapfile -t Package < <(find "$Dir" -type f -name 'waterfox-current*.tar.bz2' )
 
 # Desktop shortcut path, Applications shortcut path, Waterfox install path.
 # We need to know path to Desktop for not English operating systems
@@ -316,7 +316,7 @@ EOF
             echo "Waterfox Current is now ready for use!"
             notify-send "Installation Complete!"
         else
-            echo "You must place this script next to the 'waterfox-68' tar.bz2 package."
+            echo "You must place this script next to the 'waterfox-current' tar.bz2 package."
         fi
         break
         ;;
