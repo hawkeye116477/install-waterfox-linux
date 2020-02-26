@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Current (based on Cyberfox's script)
-# Version: 1.0.4
+# Version: 1.0.5
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -73,13 +73,11 @@ END
 
             # Create symlinks
             echo "Creating symlinks to icons (Root priveleges are required)..."
-            sudo ln -sf "$InstallDirectory"/waterfox-current/browser/icons/mozicon128.png /usr/share/pixmaps/waterfox-current.png
             sudo ln -sf "$InstallDirectory"/waterfox-current/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/waterfox-current.png
             sudo ln -sf "$InstallDirectory"/waterfox-current/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/waterfox-current.png
             sudo ln -sf "$InstallDirectory"/waterfox-current/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/waterfox-current.png
             sudo ln -sf "$InstallDirectory"/waterfox-current/browser/chrome/icons/default/default64.png /usr/share/icons/hicolor/64x64/apps/waterfox-current.png
             sudo ln -sf "$InstallDirectory"/waterfox-current/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/waterfox-current.png
-            sudo ln -sf "$InstallDirectory"/waterfox-current/browser/icons/mozicon128.png /usr/share/icons/hicolor/128x128/apps/waterfox-current.png
 
             # Add vendor default settings
             echo "Adding useful settings for Waterfox Current"
@@ -106,10 +104,6 @@ pref("intl.regional_prefs.use_os_locales", true);
 
 // Use system's dictionaries
 pref("spellchecker.dictionary_path", "$dict_path");
-
-// Set update URL for extensions
-pref("extensions.update.url", "https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
-pref("extensions.update.background.url", "https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
 EOF
             # Create start menu shortcut
             echo "Generating start menu shortcut..."

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Classic (based on Cyberfox's script)
-# Version: 1.2.3
+# Version: 1.2.4
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -53,7 +53,7 @@ select yn in "Install" "Uninstall" "Quit"; do
             fi
 
             echo "Unpacking $Package into $InstallDirectory directory"
-            tar xjfv "${Package[0]}" -C "$InstallDirectory"/temp
+            tar xjfv "${Package[0]}" -C "$InstallDirectory"
 
             # Install a wrapper to avoid confusion about binary path
             echo "Creating desktop entry (Root priveleges are required)..."
@@ -72,15 +72,21 @@ END
             sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/waterfox.png
             sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default256.png /usr/share/icons/hicolor/256x256/apps/waterfox.png
 
-            echo "Do you wish to add symlink to system's dictionaries for Waterfox Classic (Root priveleges are required)?"
+            echo "Do you wish to use system's dictionaries for Waterfox Classic?"
             select yn in "Yes" "No"; do
                 case $yn in
                 Yes)
-                    echo "Adding symlink to hunspell..."
+                    echo "Adding path to system's dictionaries..."
+                    if [ -d /usr/share/hunspell ]; then
+                        dict_path="/usr/share/hunspell"
+                    else
+                        dict_path="/usr/share/myspell"
+                    fi
+
+                    install -Dm644 /dev/stdin "$InstallDirectory"/waterfox-classic/browser/defaults/preferences/spellcheck.js <<END
+pref("spellchecker.dictionary_path", "$dict_path");
+END
                     rm -rf "$InstallDirectory"/waterfox-classic/dictionaries
-                    sudo ln -sf /usr/share/hunspell "$InstallDirectory"/waterfox-classic/dictionaries
-                    echo "Adding symlink to hyphen..."
-                    sudo ln -sf /usr/share/hyphen "$InstallDirectory"/waterfox-classic/hyphenation
                     break
                     ;;
                 No) break ;;
