@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Classic (based on Cyberfox's script)
-# Version: 1.2.2
+# Version: 1.2.3
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -22,7 +22,7 @@ Desktop="$(xdg-user-dir DESKTOP)"
 Applications=/usr/share/applications
 InstallDirectory=$HOME/Apps
 
-echo "Do you wish to install Waterfox now?"
+echo "Do you wish to install Waterfox Classic now?"
 select yn in "Install" "Uninstall" "Quit"; do
     case $yn in
     Install)
@@ -47,9 +47,9 @@ select yn in "Install" "Uninstall" "Quit"; do
             cd "$InstallDirectory" || exit
 
             # Unpack waterfox into the apps directory, Remove existing waterfox folder.
-            if [ -d "$InstallDirectory"/waterfox ]; then
-                echo "Removing older install $InstallDirectory/waterfox"
-                rm -rvf "$InstallDirectory"/waterfox
+            if [ -d "$InstallDirectory"/waterfox-classic ]; then
+                echo "Removing older install $InstallDirectory/waterfox-classic"
+                rm -rvf "$InstallDirectory"/waterfox-classic
             fi
 
             echo "Unpacking $Package into $InstallDirectory directory"
@@ -57,31 +57,30 @@ select yn in "Install" "Uninstall" "Quit"; do
 
             # Install a wrapper to avoid confusion about binary path
             echo "Creating desktop entry (Root priveleges are required)..."
-            sudo install -Dm755 /dev/stdin "/usr/bin/waterfox" <<END
+            sudo install -Dm755 /dev/stdin "/usr/bin/waterfox-classic" <<END
 #!/bin/sh
-exec ~/Apps/waterfox/waterfox "\$@"
+exec ~/Apps/waterfox-classic/waterfox "\$@"
 END
 
             # Create symlinks
             echo "Creating symlinks to icons (Root priveleges are required)..."
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/icons/mozicon128.png /usr/share/pixmaps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default22.png /usr/share/icons/hicolor/22x22/apps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default24.png /usr/share/icons/hicolor/24x24/apps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/waterfox.png
-            sudo ln -sf "$InstallDirectory"/waterfox/browser/chrome/icons/default/default256.png /usr/share/icons/hicolor/256x256/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default22.png /usr/share/icons/hicolor/22x22/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default24.png /usr/share/icons/hicolor/24x24/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/waterfox.png
+            sudo ln -sf "$InstallDirectory"/waterfox-classic/browser/chrome/icons/default/default256.png /usr/share/icons/hicolor/256x256/apps/waterfox.png
 
-            echo "Do you wish to add symlink to system's dictionaries for Waterfox (Root priveleges are required)?"
+            echo "Do you wish to add symlink to system's dictionaries for Waterfox Classic (Root priveleges are required)?"
             select yn in "Yes" "No"; do
                 case $yn in
                 Yes)
                     echo "Adding symlink to hunspell..."
-                    rm -rf "$InstallDirectory"/waterfox/dictionaries
-                    sudo ln -sf /usr/share/hunspell "$InstallDirectory"/waterfox/dictionaries
+                    rm -rf "$InstallDirectory"/waterfox-classic/dictionaries
+                    sudo ln -sf /usr/share/hunspell "$InstallDirectory"/waterfox-classic/dictionaries
                     echo "Adding symlink to hyphen..."
-                    sudo ln -sf /usr/share/hyphen "$InstallDirectory"/waterfox/hyphenation
+                    sudo ln -sf /usr/share/hyphen "$InstallDirectory"/waterfox-classic/hyphenation
                     break
                     ;;
                 No) break ;;
@@ -90,10 +89,10 @@ END
 
             # Create start menu shortcut
             echo "Generating start menu shortcut..."
-            sudo install -Dm644 /dev/stdin "$Applications/waterfox.desktop" <<EOF
+            sudo install -Dm644 /dev/stdin "$Applications/waterfox-classic.desktop" <<EOF
 [Desktop Entry]
 Version=1.0
-Name=Waterfox
+Name=Waterfox Classic
 Comment=Browse the World Wide Web
 Comment[ar]=تصفح الشبكة العنكبوتية العالمية
 Comment[ast]=Restola pela Rede
@@ -205,14 +204,14 @@ Keywords[uk]=Internet;WWW;Browser;Web;Explorer;Інтернет;мережа;п�
 Keywords[vi]=Internet;WWW;Browser;Web;Explorer;Trình duyệt;Trang web;
 Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;水狐;Waterfox;wf;互联网;网站;
 Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;水狐;
-Exec=waterfox %u
+Exec=waterfox-classic %u
 Terminal=false
 X-MuiltpleArgs=false
 Type=Application
-Icon=waterfox
+Icon=waterfox-classic
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-StartupWMClass=WaterfoxClassic
+StartupWMClass=Waterfox
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
 
@@ -254,7 +253,7 @@ Name[uk]=Відкрити нове вікно
 Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開啟新視窗
-Exec=waterfox -new-window
+Exec=waterfox-classic -new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -275,7 +274,7 @@ Name[sl]=Odpri novo okno zasebnega brskanja
 Name[tr]=Yeni bir pencere aç
 Name[uk]=Відкрити нове вікно у потайливому режимі
 Name[zh_TW]=開啟新隱私瀏覽視窗
-Exec=waterfox -private-window
+Exec=waterfox-classic -private-window
 EOF
 
             # Install optional desktop shortcut
@@ -284,16 +283,16 @@ EOF
                 case $yn in
                 Yes)
                     echo "Generating desktop shortcut..."
-                    sudo ln -sf $Applications/waterfox.desktop "$Desktop"/waterfox.desktop
+                    sudo ln -sf $Applications/waterfox-classic.desktop "$Desktop"/waterfox-classic.desktop
                     break
                     ;;
                 No) break ;;
                 esac
             done
-            echo "Waterfox is now ready for use!"
+            echo "Waterfox Classic is now ready for use!"
             notify-send "Installation Complete!"
         else
-            echo "You must place this script next to the 'waterfox' tar.bz2 package."
+            echo "You must place this script next to the 'waterfox-classic' tar.bz2 package."
         fi
         break
         ;;
@@ -304,59 +303,59 @@ EOF
         cd "$InstallDirectory" || exit
 
         # Remove waterfox installation folder
-        if [ -d "$InstallDirectory"/waterfox ]; then
-            echo "Removing older install $InstallDirectory/waterfox"
-            rm -rvf "$InstallDirectory"/waterfox
+        if [ -d "$InstallDirectory"/waterfox-classic ]; then
+            echo "Removing older install $InstallDirectory/waterfox-classic"
+            rm -rvf "$InstallDirectory"/waterfox-classic
         fi
 
         # Remove waterfox desktop icon if exists.
-        if [ -f "$Desktop"/waterfox.desktop ]; then
-            rm -vrf "$Desktop"/waterfox.desktop
+        if [ -f "$Desktop"/waterfox-classic.desktop ]; then
+            rm -vrf "$Desktop"/waterfox-classic.desktop
         fi
 
         # Remove menu icon if exists.
         # Requires admin permissions to write the file to /usr/share/applications directory.
         # This should only prompt if the user installed it, Meaning if the check for the file returns true.
-        if [ -f $Applications/waterfox.desktop ]; then
-            sudo rm -vrf $Applications/waterfox.desktop
+        if [ -f $Applications/waterfox-classic.desktop ]; then
+            sudo rm -vrf $Applications/waterfox-classic.desktop
         fi
 
         # Remove wrapper
-        if [ -f /usr/bin/waterfox ]; then
-            sudo rm -vrf /usr/bin/waterfox
+        if [ -f /usr/bin/waterfox-classic ]; then
+            sudo rm -vrf /usr/bin/waterfox-classic
         fi
 
         # Remove symlinks
-        if [ -L /usr/share/pixmaps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/pixmaps/waterfox.png
+        if [ -L /usr/share/pixmaps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/pixmaps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/16x16/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/16x16/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/16x16/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/16x16/apps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/22x22/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/22x22/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/22x22/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/22x22/apps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/24x24/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/24x24/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/24x24/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/24x24/apps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/32x32/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/32x32/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/32x32/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/32x32/apps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/48x48/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/48x48/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/48x48/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/48x48/apps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/256x256/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/256x256/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/256x256/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/256x256/apps/waterfox-classic.png
         fi
 
-        if [ -L /usr/share/icons/hicolor/128x128/apps/waterfox.png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/128x128/apps/waterfox.png
+        if [ -L /usr/share/icons/hicolor/128x128/apps/waterfox-classic.png ]; then
+            sudo rm -vrf /usr/share/icons/hicolor/128x128/apps/waterfox-classic.png
         fi
 
         # Remove ~/Apps if is empty
