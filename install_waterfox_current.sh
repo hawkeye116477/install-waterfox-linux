@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Current (based on Cyberfox's script)
-# Version: 1.0.5
+# Version: 1.0.6
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -229,7 +229,6 @@ Type=Application
 Icon=waterfox-current
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-StartupWMClass=WaterfoxCurrent
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
 

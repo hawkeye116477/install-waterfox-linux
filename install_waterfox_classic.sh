@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Classic (based on Cyberfox's script)
-# Version: 1.2.4
+# Version: 1.2.5
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -217,7 +217,6 @@ Type=Application
 Icon=waterfox-classic
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-StartupWMClass=Waterfox
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
 
