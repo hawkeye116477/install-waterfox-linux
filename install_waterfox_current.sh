@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox Current (based on Cyberfox's script)
-# Version: 1.0.6
+# Version: 1.0.7
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -67,7 +67,7 @@ if [ "$XDG_CURRENT_DESKTOP" == "KDE" ]; then
     export GTK_USE_PORTAL=1
 fi
 
-exec ~/Apps/waterfox-current/waterfox "$@"
+exec ~/Apps/waterfox-current/waterfox "\$@"
 
 END
 
