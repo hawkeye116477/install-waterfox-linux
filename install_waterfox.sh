@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox (based on Cyberfox's script)
-# Version: 1.3.1
+# Version: 1.3.2
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -19,8 +19,7 @@ if [ -f "$ConfFile" ]; then
 fi
 
 # Parse arguments
-usage()
-{
+usage() {
     echo "Usage: $0  [ options ... ]"
     echo ""
     echo "  -v or --version              : Print script version"
@@ -30,24 +29,23 @@ usage()
     echo ""
 }
 
-for i in "$@"
-do
-case $i in
-    -sp=*|--spath=*)
-    Dir="${i#*=}"
-    ;;
-    -v|--version)
-    printf "%-10s %-10s\n" "Script version: " "$(awk -F': ' '/^# Version:/ {print $2; exit}' "$0")"
-    exit 0
-    ;;
-    -ip=*|--ipath=*)
-    InstallDirectory="${i#*=}"
-    ;;
-    -h|--help)
-    usage
-    exit 0
-    ;;
-esac
+for i in "$@"; do
+    case $i in
+    -sp=* | --spath=*)
+        Dir="${i#*=}"
+        ;;
+    -v | --version)
+        printf "%-10s %-10s\n" "Script version: " "$(awk -F': ' '/^# Version:/ {print $2; exit}' "$0")"
+        exit 0
+        ;;
+    -ip=* | --ipath=*)
+        InstallDirectory="${i#*=}"
+        ;;
+    -h | --help)
+        usage
+        exit 0
+        ;;
+    esac
 done
 
 # Enter current script directory.
@@ -61,41 +59,37 @@ if [[ ${#Packages[@]} -eq 0 && -d "$InstallDirectory" ]]; then
 fi
 
 if [ "${#Packages[@]}" ]; then
-  PackageTypes=()
+    PackageTypes=()
 
-  if [[ ${Packages[*]} =~ "waterfox-classic" ]];
-  then
-    PackageTypes+=("Classic")
-  fi
+    if [[ ${Packages[*]} =~ "waterfox-classic" ]]; then
+        PackageTypes+=("Classic")
+    fi
 
-  if [[ ${Packages[*]} =~ "waterfox-current" ]];
-  then
-    PackageTypes+=("Current")
-  fi
+    if [[ ${Packages[*]} =~ "waterfox-current" ]]; then
+        PackageTypes+=("Current")
+    fi
 
-  if [[ ${Packages[*]} =~ waterfox-(G3|g3) ]];
-  then
-    PackageTypes+=("G3")
-  fi
+    if [[ ${Packages[*]} =~ waterfox-(G3|g3) ]]; then
+        PackageTypes+=("G3")
+    fi
 else
-   echo "No packages detected. Please place this script next to the tarball packages or rerun it with flag -sp=<path>."
-   exit 0
+    echo "No packages detected. Please place this script next to the tarball packages or rerun it with flag -sp=<path>."
+    exit 0
 fi
 
 if [[ "${PackageTypes[*]}" ]]; then
-echo "Which package are you interested in?"
-	select chosenPackageType in "${PackageTypes[@]}" "None"
-	do
-		case $chosenPackageType in
-			"None")
-          exit 0
-					break
-					;;
-			*)
-					break
-				;;
-		esac
-done
+    echo "Which package are you interested in?"
+    select chosenPackageType in "${PackageTypes[@]}" "None"; do
+        case $chosenPackageType in
+        "None")
+            exit 0
+            break
+            ;;
+        *)
+            break
+            ;;
+        esac
+    done
 fi
 
 echo "What do you want to do with Waterfox $chosenPackageType now?"
@@ -103,9 +97,9 @@ echo "What do you want to do with Waterfox $chosenPackageType now?"
 lowerChosenPackageType=$(echo "$chosenPackageType" | tr "[:upper:]" "[:lower:]")
 
 if [[ "$lowerChosenPackageType" == "g3" ]]; then
-  packageTypeName="(G3|g3)"
+    packageTypeName="(G3|g3)"
 else
-  packageTypeName=$(echo "$chosenPackageType" | tr "[:upper:]" "[:lower:]")
+    packageTypeName=$(echo "$chosenPackageType" | tr "[:upper:]" "[:lower:]")
 fi
 
 mapfile -t Packages < <(find "$Dir" -type f -regextype posix-extended -regex ".*waterfox-$packageTypeName.*(tar\.bz2|AppImage)")
@@ -120,18 +114,17 @@ select yn in "Install" "Uninstall" "Quit"; do
         # Check if more than 1 package exist.
         if [ "$PackageCount" -gt 1 ]; then
             echo "Which package do you want to install?"
-            select Package in "${Packages[@]}" "None"
-	          do
-		          case $Package in
-			                "None")
-                          exit 0
-					                break
-					                ;;
-			                *)
-                          mapfile -t Packages < <(echo "$Package")
-                          break
-				                  ;;
-		                esac
+            select Package in "${Packages[@]}" "None"; do
+                case $Package in
+                "None")
+                    exit 0
+                    break
+                    ;;
+                *)
+                    mapfile -t Packages < <(echo "$Package")
+                    break
+                    ;;
+                esac
             done
         fi
 
@@ -160,15 +153,15 @@ select yn in "Install" "Uninstall" "Quit"; do
         echo "Unpacking ${Packages[0]} into $InstallDirectory directory"
         mkdir -p "$InstallDirectory"/temp
         if [[ "${Packages[0]}" =~ "AppImage" ]]; then
-          chmod +x "${Packages[0]}"
-          cd "$InstallDirectory"/temp || exit
-          "${Packages[0]}" --appimage-extract
-          mv "$InstallDirectory"/temp/squashfs-root/usr/bin/waterfox-"$lowerChosenPackageType" "$InstallDirectory"/temp/squashfs-root/usr/bin/waterfox
-          mv "$InstallDirectory"/temp/squashfs-root/usr/bin/* "$InstallDirectory"/temp
-          rm -rf "$InstallDirectory"/temp/squashfs-root/
-          mkdir -p "$InstallDirectory"/waterfox-"$lowerChosenPackageType"
+            chmod +x "${Packages[0]}"
+            cd "$InstallDirectory"/temp || exit
+            "${Packages[0]}" --appimage-extract
+            mv "$InstallDirectory"/temp/squashfs-root/usr/bin/waterfox-"$lowerChosenPackageType" "$InstallDirectory"/temp/squashfs-root/usr/bin/waterfox
+            mv "$InstallDirectory"/temp/squashfs-root/usr/bin/* "$InstallDirectory"/temp
+            rm -rf "$InstallDirectory"/temp/squashfs-root/
+            mkdir -p "$InstallDirectory"/waterfox-"$lowerChosenPackageType"
         else
-          tar xjfv "${Packages[0]}" -C "$InstallDirectory"/temp
+            tar xjfv "${Packages[0]}" -C "$InstallDirectory"/temp
         fi
 
         mv "$InstallDirectory"/temp/* "$InstallDirectory"/waterfox-"$lowerChosenPackageType"
@@ -194,31 +187,31 @@ END
         sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/waterfox-"$lowerChosenPackageType".png
         sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default256.png /usr/share/icons/hicolor/256x256/apps/waterfox-"$lowerChosenPackageType".png
 
-            # Add vendor default settings
-            echo "Do you wish to use system's dictionaries for Waterfox $chosenPackageType?"
-            select yn in "Yes" "No"; do
-                case $yn in
-                Yes)
-                    echo "Adding path to system's dictionaries..."
-                    if [ -d /usr/share/hunspell ]; then
-                        dict_path="/usr/share/hunspell"
-                    else
-                        dict_path="/usr/share/myspell"
-                    fi
+        # Add vendor default settings
+        echo "Do you wish to use system's dictionaries for Waterfox $chosenPackageType?"
+        select yn in "Yes" "No"; do
+            case $yn in
+            Yes)
+                echo "Adding path to system's dictionaries..."
+                if [ -d /usr/share/hunspell ]; then
+                    dict_path="/usr/share/hunspell"
+                else
+                    dict_path="/usr/share/myspell"
+                fi
 
-                    install -Dm644 /dev/stdin "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/defaults/preferences/spellcheck.js <<END
+                install -Dm644 /dev/stdin "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/defaults/preferences/spellcheck.js <<END
 pref("spellchecker.dictionary_path", "$dict_path");
 END
-                    rm -rf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/dictionaries
-                    break
-                    ;;
-                No) break ;;
-                esac
-            done
+                rm -rf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/dictionaries
+                break
+                ;;
+            No) break ;;
+            esac
+        done
 
-            # Create start menu shortcut
-            echo "Generating start menu shortcut..."
-            sudo install -Dm644 /dev/stdin "$Applications/waterfox-$lowerChosenPackageType.desktop" <<EOF
+        # Create start menu shortcut
+        echo "Generating start menu shortcut..."
+        sudo install -Dm644 /dev/stdin "$Applications/waterfox-$lowerChosenPackageType.desktop" <<EOF
 [Desktop Entry]
 Version=1.0
 Name=Waterfox $chosenPackageType
@@ -449,7 +442,7 @@ Name[wo]=Palanteer bu bees
 Name[xh]=Ifestile entsha
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=waterfox-$lowerChosenPackageType -new-window
+Exec=waterfox-$lowerChosenPackageType --new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -557,7 +550,7 @@ Name[wo]=Panlanteeru biir bu bees
 Name[xh]=Ifestile yangasese entsha
 Name[zh_CN]=新建隐私浏览窗口
 Name[zh_TW]=新增隱私視窗
-Exec=waterfox-$lowerChosenPackageType -private-window
+Exec=waterfox-$lowerChosenPackageType --private-window
 
 [Desktop Action ProfileManagerWindow]
 Name=Open the Profile Manager
@@ -568,45 +561,45 @@ Name[pl]=Menedżer Profili
 Exec=waterfox-$lowerChosenPackageType --ProfileManager
 EOF
 
-            # Refresh icons cache
-            echo "Refreshing icons cache..."
-            sudo gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
+        # Refresh icons cache
+        echo "Refreshing icons cache..."
+        sudo gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor
 
-            # Install optional desktop shortcut
-            echo "Do you wish to add a desktop shortcut?"
-            select yn in "Yes" "No"; do
-                case $yn in
-                Yes)
-                    echo "Generating desktop shortcut..."
-                    sudo ln -sf $Applications/waterfox-"$lowerChosenPackageType".desktop "$Desktop"/waterfox-"$lowerChosenPackageType".desktop
-                    break
-                    ;;
-                No) break ;;
-                esac
-            done
+        # Install optional desktop shortcut
+        echo "Do you wish to add a desktop shortcut?"
+        select yn in "Yes" "No"; do
+            case $yn in
+            Yes)
+                echo "Generating desktop shortcut..."
+                sudo ln -sf $Applications/waterfox-"$lowerChosenPackageType".desktop "$Desktop"/waterfox-"$lowerChosenPackageType".desktop
+                break
+                ;;
+            No) break ;;
+            esac
+        done
 
-            # Remove installed archive file
-            echo "Do you wish to remove installed tarball/AppImage package?"
-            select yn in "Yes" "No"; do
-                case $yn in
-                Yes)
-                    echo "Removing package..."
-                    rm -rf "${Packages[0]}"
-                    break
-                    ;;
-                No) break ;;
-                esac
-            done
+        # Remove installed archive file
+        echo "Do you wish to remove installed tarball/AppImage package?"
+        select yn in "Yes" "No"; do
+            case $yn in
+            Yes)
+                echo "Removing package..."
+                rm -rf "${Packages[0]}"
+                break
+                ;;
+            No) break ;;
+            esac
+        done
 
-            # Save install path
-            mkdir -p "$ConfDir"
-            install -Dm644 /dev/stdin "$ConfDir/settings.conf" <<END
+        # Save install path
+        mkdir -p "$ConfDir"
+        install -Dm644 /dev/stdin "$ConfDir/settings.conf" <<END
 InstallPath=$InstallDirectory
 END
 
-            # Finish
-            echo "Waterfox $chosenPackageType is now ready for use!"
-            notify-send "Waterfox $chosenPackageType has been installed in $InstallDirectory!"
+        # Finish
+        echo "Waterfox $chosenPackageType is now ready for use!"
+        notify-send "Waterfox $chosenPackageType has been installed in $InstallDirectory!"
         break
         ;;
     Uninstall)
