@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox (based on Cyberfox's script)
-# Version: 1.3.2
+# Version: 1.3.3
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -72,9 +72,6 @@ if [ "${#Packages[@]}" ]; then
     if [[ ${Packages[*]} =~ waterfox-(G3|g3) ]]; then
         PackageTypes+=("G3")
     fi
-else
-    echo "No packages detected. Please place this script next to the tarball packages or rerun it with flag -sp=<path>."
-    exit 0
 fi
 
 if [[ "${PackageTypes[*]}" ]]; then
@@ -90,6 +87,9 @@ if [[ "${PackageTypes[*]}" ]]; then
             ;;
         esac
     done
+else
+    echo "No packages detected. Please place this script next to the tarball/AppImage packages or rerun it with flag -sp=<path>."
+    exit 0
 fi
 
 echo "What do you want to do with Waterfox $chosenPackageType now?"
