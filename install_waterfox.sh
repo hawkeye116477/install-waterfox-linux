@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox (based on Cyberfox's script)
-# Version: 1.3.3
+# Version: 1.3.4
 
 # Set current directory to script directory.
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -52,10 +52,10 @@ done
 cd "$Dir" || exit
 
 # Make package name editable in single place in the event of file naming change.
-mapfile -t Packages < <(find "$Dir" -type f -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3).*(tar\.bz2|AppImage)")
+mapfile -t Packages < <(find "$Dir" -type f -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4).*(tar\.bz2|AppImage)")
 
 if [[ ${#Packages[@]} -eq 0 && -d "$InstallDirectory" ]]; then
-    mapfile -t Packages < <(find "$InstallDirectory" -type d -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3)")
+    mapfile -t Packages < <(find "$InstallDirectory" -type d -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4)")
 fi
 
 if [ "${#Packages[@]}" ]; then
@@ -71,6 +71,10 @@ if [ "${#Packages[@]}" ]; then
 
     if [[ ${Packages[*]} =~ waterfox-(G3|g3) ]]; then
         PackageTypes+=("G3")
+    fi
+
+    if [[ ${Packages[*]} =~ waterfox-(G4|g4) ]]; then
+        PackageTypes+=("G4")
     fi
 fi
 
@@ -98,6 +102,8 @@ lowerChosenPackageType=$(echo "$chosenPackageType" | tr "[:upper:]" "[:lower:]")
 
 if [[ "$lowerChosenPackageType" == "g3" ]]; then
     packageTypeName="(G3|g3)"
+elif [[ "$lowerChosenPackageType" == "g4" ]]; then
+    packageTypeName="(G4|g4)"
 else
     packageTypeName=$(echo "$chosenPackageType" | tr "[:upper:]" "[:lower:]")
 fi
