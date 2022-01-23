@@ -1,7 +1,32 @@
 #!/bin/bash
 
-# Installation and uninstallation script for Waterfox (based on Cyberfox's script)
-# Version: 1.3.5
+# Installation and uninstallation script for Waterfox
+# Version: 1.3.6
+
+# MIT License
+
+# Copyright (c) 2022 hawkeye116477
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+#
+#
 
 # Script directory
 Dir=$(cd "$(dirname "$0")" && pwd)
@@ -188,13 +213,10 @@ END
 
         # Create symlinks
         echo "Creating symlinks to icons..."
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/waterfox-"$lowerChosenPackageType".png
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default22.png /usr/share/icons/hicolor/22x22/apps/waterfox-"$lowerChosenPackageType".png
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default24.png /usr/share/icons/hicolor/24x24/apps/waterfox-"$lowerChosenPackageType".png
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/waterfox-"$lowerChosenPackageType".png
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/waterfox-"$lowerChosenPackageType".png
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/waterfox-"$lowerChosenPackageType".png
-        sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default256.png /usr/share/icons/hicolor/256x256/apps/waterfox-"$lowerChosenPackageType".png
+        sizes=("16" "22" "24" "32" "48" "128" "256")
+        for size in "${sizes[@]}"; do
+            sudo ln -sf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"/browser/chrome/icons/default/default"$size".png /usr/share/icons/hicolor/"$size"x"$size"/apps/waterfox-"$lowerChosenPackageType".png
+        done
 
         # Add vendor default settings
         echo "Do you wish to use system's dictionaries for Waterfox $chosenPackageType?"
@@ -650,33 +672,12 @@ END
             sudo rm -vrf /usr/share/pixmaps/waterfox-"$lowerChosenPackageType".png
         fi
 
-        if [ -L /usr/share/icons/hicolor/16x16/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/16x16/apps/waterfox-"$lowerChosenPackageType".png
-        fi
-
-        if [ -L /usr/share/icons/hicolor/22x22/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/22x22/apps/waterfox-"$lowerChosenPackageType".png
-        fi
-
-        if [ -L /usr/share/icons/hicolor/24x24/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/24x24/apps/waterfox-"$lowerChosenPackageType".png
-        fi
-
-        if [ -L /usr/share/icons/hicolor/32x32/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/32x32/apps/waterfox-"$lowerChosenPackageType".png
-        fi
-
-        if [ -L /usr/share/icons/hicolor/48x48/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/48x48/apps/waterfox-"$lowerChosenPackageType".png
-        fi
-
-        if [ -L /usr/share/icons/hicolor/256x256/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/256x256/apps/waterfox-"$lowerChosenPackageType".png
-        fi
-
-        if [ -L /usr/share/icons/hicolor/128x128/apps/waterfox-"$lowerChosenPackageType".png ]; then
-            sudo rm -vrf /usr/share/icons/hicolor/128x128/apps/waterfox-"$lowerChosenPackageType".png
-        fi
+        sizes=("16" "22" "24" "32" "48" "128" "256")
+        for size in "${sizes[@]}"; do
+            if [ -L /usr/share/icons/hicolor/"$size"x"$size"/apps/waterfox-"$lowerChosenPackageType".png ]; then
+                sudo rm -vrf /usr/share/icons/hicolor/"$size"x"$size"/apps/waterfox-"$lowerChosenPackageType".png
+            fi
+        done
 
         # Remove install directory if is empty
         if [ ! "$(ls -A "$InstallDirectory")" ]; then
