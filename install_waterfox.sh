@@ -80,8 +80,8 @@ cd "$Dir" || exit
 echo "Detecting installable/installed packages..."
 mapfile -t Packages < <(find "$Dir" -type f -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4).*(tar\.bz2|AppImage)")
 
-if [[ ${#Packages[@]} -eq 0 && -d "$InstallDirectory" ]]; then
-    mapfile -t Packages < <(find "$InstallDirectory" -type d -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4)")
+if [[ -d "$InstallDirectory" ]]; then
+    mapfile -t -O "${#Packages[@]}" Packages < <(find "$InstallDirectory" -type d -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4)")
 fi
 
 if [ "${#Packages[@]}" ]; then
@@ -136,7 +136,7 @@ fi
 
 chosenPackages=()
 for package in "${Packages[@]}"; do
-    if [[ "$(basename -- "$package")" =~ ^waterfox-"$packageTypeName".*(tar\.bz2|AppImage) ]]; then
+    if [[ "$(basename -- "$package")" =~ ^waterfox-$packageTypeName.*(tar\.bz2|AppImage) ]]; then
         chosenPackages+=("$package")
     fi
 done
