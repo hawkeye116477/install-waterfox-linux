@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Installation and uninstallation script for Waterfox
-# Version: 1.3.6
+# Version: 1.3.7
 
 # MIT License
 
@@ -76,9 +76,13 @@ done
 # Enter current script directory.
 cd "$Dir" || exit
 
-# Detect installable packages
-echo "Detecting installable packages..."
+# Detect installable/installed packages
+echo "Detecting installable/installed packages..."
 mapfile -t Packages < <(find "$Dir" -type f -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4).*(tar\.bz2|AppImage)")
+
+if [[ ${#Packages[@]} -eq 0 && -d "$InstallDirectory" ]]; then
+    mapfile -t Packages < <(find "$InstallDirectory" -type d -regextype posix-extended -regex ".*waterfox-(classic|current|G3|g3|G4|g4)")
+fi
 
 if [ "${#Packages[@]}" ]; then
     PackageTypes=()
@@ -645,7 +649,7 @@ END
 
         # Remove waterfox installation folder
         if [ -d "$InstallDirectory"/waterfox-"$lowerChosenPackageType" ]; then
-            echo "Removing older install $InstallDirectory/waterfox-$lowerChosenPackageType"
+            echo "Removing $InstallDirectory/waterfox-$lowerChosenPackageType"
             rm -rvf "$InstallDirectory"/waterfox-"$lowerChosenPackageType"
         fi
 
