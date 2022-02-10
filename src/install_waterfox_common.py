@@ -84,7 +84,7 @@ def install(sourcePath, installPath, chosenPackageType, installDesktopShortcut,
 
     # Unpack Waterfox into the install directory
     printDef(_("Unpackaging {package} into {installPath} directory...")
-          .format(package=os.path.basename(sourcePath), installPath=installPath))
+             .format(package=os.path.basename(sourcePath), installPath=installPath))
     tempPath = pj(installPath, "temp")
     if os.path.exists(tempPath):
         shutil.rmtree(tempPath)
@@ -203,6 +203,10 @@ exec {installPath}/waterfox-{lowerChosenPackageType}/waterfox "$@"
     confG["InstallDesktopShortcut"] = installDesktopShortcut
     confG["UseSystemDictionaries"] = useSystemDictionaries
     confG["RemoveArchive"] = removeArchive
+    confDir = pj(os.getenv('XDG_CONFIG_HOME',
+                           os.path.expanduser("~/.config")), "install_waterfox")
+    if not os.path.exists(confDir):
+        os.makedirs(confDir)
     with open(configFilePath, 'w+', encoding='utf-8') as confFile:
         conf.write(confFile)
 
@@ -210,9 +214,9 @@ exec {installPath}/waterfox-{lowerChosenPackageType}/waterfox "$@"
     printDef("-----------------------------------")
     grinningFace = "\N{grinning face}"
     printDef(_("Waterfox {chosenPackageType} has been installed in {installPath} {grinningFace}!")
-          .format(chosenPackageType=chosenPackageType,
-          installPath=installPath,
-          grinningFace=grinningFace))
+             .format(chosenPackageType=chosenPackageType,
+                     installPath=installPath,
+                     grinningFace=grinningFace))
 
 
 def uninstall(installPath, chosenPackageType, configFilePath, removeConfigFile, printDef):
@@ -284,9 +288,13 @@ def uninstall(installPath, chosenPackageType, configFilePath, removeConfigFile, 
     if removeConfigFile == "yes" and os.path.isfile(configFilePath):
         printDef(_("Removing file with installer settings..."))
         os.remove(configFilePath)
+        confDir = pj(os.getenv('XDG_CONFIG_HOME',
+                               os.path.expanduser("~/.config")), "install_waterfox")
+        if not os.listdir(confDir):
+            os.rmdir(confDir)
 
     # Finish
     printDef("-----------------------------------")
     disappointedFace = "\N{disappointed face}"
     printDef(_("Waterfox {chosenPackageType} has been uninstalled {disappointedFace}.")
-          .format(chosenPackageType=chosenPackageType, disappointedFace=disappointedFace))
+             .format(chosenPackageType=chosenPackageType, disappointedFace=disappointedFace))
