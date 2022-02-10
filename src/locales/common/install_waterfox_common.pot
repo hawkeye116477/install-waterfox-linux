@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the install_waterfox_common package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: install_waterfox_common 1.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 19:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: install_waterfox_common.py:75
+#, python-brace-format
+msgid "Making {installPath} directory..."
+msgstr ""
+
+#: install_waterfox_common.py:82
+msgid "Removing older installed version..."
+msgstr ""
+
+#: install_waterfox_common.py:86
+#, python-brace-format
+msgid "Unpackaging {package} into {installPath} directory..."
+msgstr ""
+
+#: install_waterfox_common.py:114
+msgid "Creating executable file..."
+msgstr ""
+
+#: install_waterfox_common.py:130
+msgid "Generating start menu shortcut..."
+msgstr ""
+
+#: install_waterfox_common.py:151
+msgid "Creating symlinks to icons..."
+msgstr ""
+
+#: install_waterfox_common.py:163
+msgid "Refreshing icons cache..."
+msgstr ""
+
+#: install_waterfox_common.py:171
+msgid "Installing desktop shortcut..."
+msgstr ""
+
+#: install_waterfox_common.py:178
+msgid "Adding path to system's dictionaries..."
+msgstr ""
+
+#: install_waterfox_common.py:196
+#, python-brace-format
+msgid "Removing {sourcePath} ..."
+msgstr ""
+
+#: install_waterfox_common.py:200
+msgid "Saving settings..."
+msgstr ""
+
+#: install_waterfox_common.py:214
+#, python-brace-format
+msgid ""
+"Waterfox {chosenPackageType} has been installed in {installPath} "
+"{grinningFace}!"
+msgstr ""
+
+#: install_waterfox_common.py:225
+#, python-brace-format
+msgid "Removing {appPath} directory..."
+msgstr ""
+
+#: install_waterfox_common.py:232
+msgid "Removing executable file..."
+msgstr ""
+
+#: install_waterfox_common.py:234
+#, python-brace-format
+msgid "Root priveleges are required to remove {execFile}!"
+msgstr ""
+
+#: install_waterfox_common.py:246
+msgid "Removing start menu shortcut..."
+msgstr ""
+
+#: install_waterfox_common.py:248
+#, python-brace-format
+msgid "Root priveleges are required to remove {path}!"
+msgstr ""
+
+#: install_waterfox_common.py:258
+msgid "Removing desktop shortcut..."
+msgstr ""
+
+#: install_waterfox_common.py:272 install_waterfox_common.py:276
+#, python-brace-format
+msgid "Removing {file} ..."
+msgstr ""
+
+#: install_waterfox_common.py:273
+msgid "Root priveleges are required to remove symlinks to icons!"
+msgstr ""
+
+#: install_waterfox_common.py:282
+#, python-brace-format
+msgid "Removing empty {installPath} directory..."
+msgstr ""
+
+#: install_waterfox_common.py:287
+msgid "Removing file with installer settings..."
+msgstr ""
+
+#: install_waterfox_common.py:293
+#, python-brace-format
+msgid "Waterfox {chosenPackageType} has been uninstalled {disappointedFace}."
+msgstr ""

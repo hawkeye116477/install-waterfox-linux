@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the install_waterfox_CLI package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: install_waterfox_CLI 1.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 18:17+0100\n"
+"PO-Revision-Date: 2022-02-10 18:21+0100\n"
+"Last-Translator: hawkeye116477\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0\n"
+
+#: /usr/lib/python3.10/argparse.py:296
+msgid "usage: "
+msgstr "użycie: "
+
+#: /usr/lib/python3.10/argparse.py:857
+msgid ".__call__() not defined"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1200
+#, python-format
+msgid "unknown parser %(parser_name)r (choices: %(choices)s)"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1260
+#, python-format
+msgid "argument \"-\" with mode %r"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1269
+#, python-format
+msgid "can't open '%(filename)s': %(error)s"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1478
+#, python-format
+msgid "cannot merge actions - two groups are named %r"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1516
+msgid "'required' is an invalid argument for positionals"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1538
+#, python-format
+msgid ""
+"invalid option string %(option)r: must start with a character "
+"%(prefix_chars)r"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1556
+#, python-format
+msgid "dest= is required for options like %r"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1573
+#, python-format
+msgid "invalid conflict_resolution value: %r"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1591
+#, python-format
+msgid "conflicting option string: %s"
+msgid_plural "conflicting option strings: %s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: /usr/lib/python3.10/argparse.py:1657
+msgid "mutually exclusive arguments must be optional"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1724
+msgid "positional arguments"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:1725
+msgid "options"
+msgstr "opcje"
+
+#: /usr/lib/python3.10/argparse.py:1740
+msgid "show this help message and exit"
+msgstr "wyświetla ten tekst i kończy pracę"
+
+#: /usr/lib/python3.10/argparse.py:1771
+msgid "cannot have multiple subparser arguments"
+msgstr "nie może mieć wielu argumentów subparsera"
+
+#: /usr/lib/python3.10/argparse.py:1823 /usr/lib/python3.10/argparse.py:2334
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr "nierozpoznane argumenty: %s"
+
+#: /usr/lib/python3.10/argparse.py:1924
+#, python-format
+msgid "not allowed with argument %s"
+msgstr "niedozwolone z argumentem %s"
+
+#: /usr/lib/python3.10/argparse.py:1970 /usr/lib/python3.10/argparse.py:1984
+#, python-format
+msgid "ignored explicit argument %r"
+msgstr "zignorowano argument %r"
+
+#: /usr/lib/python3.10/argparse.py:2091
+#, python-format
+msgid "the following arguments are required: %s"
+msgstr "wymagane są następujące argumenty: %s"
+
+#: /usr/lib/python3.10/argparse.py:2106
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr "jeden z argumentów %s jest wymagany"
+
+#: /usr/lib/python3.10/argparse.py:2149
+msgid "expected one argument"
+msgstr "oczekiwano jednego argumentu"
+
+#: /usr/lib/python3.10/argparse.py:2150
+msgid "expected at most one argument"
+msgstr "oczekiwano co najwyżej jednego argumentu"
+
+#: /usr/lib/python3.10/argparse.py:2151
+msgid "expected at least one argument"
+msgstr "oczekiwano co najmniej jednego argumentu"
+
+#: /usr/lib/python3.10/argparse.py:2155
+#, python-format
+msgid "expected %s argument"
+msgid_plural "expected %s arguments"
+msgstr[0] "oczekiwano %s argumentu"
+msgstr[1] "oczekiwano %s argumentów"
+msgstr[2] "oczekiwano %s argumentów"
+
+#: /usr/lib/python3.10/argparse.py:2213
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr ""
+
+#: /usr/lib/python3.10/argparse.py:2277
+#, python-format
+msgid "unexpected option string: %s"
+msgstr "nieoczekiwany ciąg opcji: %s"
+
+#: /usr/lib/python3.10/argparse.py:2474
+#, python-format
+msgid "%r is not callable"
+msgstr "%r jest niemożliwa do wywołania"
+
+#: /usr/lib/python3.10/argparse.py:2491
+#, python-format
+msgid "invalid %(type)s value: %(value)r"
+msgstr "nieprawidłowa wartość %(type)s: %(value)r"
+
+#: /usr/lib/python3.10/argparse.py:2502
+#, python-format
+msgid "invalid choice: %(value)r (choose from %(choices)s)"
+msgstr "nieprawidłowy wybór: %(value)r (wybierz z %(choices)s)"
+
+#: /usr/lib/python3.10/argparse.py:2578
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: błąd: %(message)s\n"
+
+#: install_waterfox_CLI.py:52 install_waterfox_CLI.py:71
+#: install_waterfox_CLI.py:206 install_waterfox_CLI.py:209
+#: install_waterfox_CLI.py:213 install_waterfox_CLI.py:247
+#: install_waterfox_CLI.py:252
+msgid "Yes"
+msgstr "Tak"
+
+#: install_waterfox_CLI.py:59 install_waterfox_CLI.py:64
+msgid "Enter your choice: "
+msgstr "Wprowadź swój wybór: "
+
+#: install_waterfox_CLI.py:62
+msgid ""
+"\n"
+"Invalid option. Please try again."
+msgstr ""
+"\n"
+"Nieprawidłowa opcja. Proszę spróbować ponownie."
+
+#: install_waterfox_CLI.py:73 install_waterfox_CLI.py:206
+#: install_waterfox_CLI.py:209 install_waterfox_CLI.py:213
+#: install_waterfox_CLI.py:247 install_waterfox_CLI.py:248
+#: install_waterfox_CLI.py:252
+msgid "No"
+msgstr "Nie"
+
+#: install_waterfox_CLI.py:81
+msgid "Installation and uninstallation script for Waterfox"
+msgstr "Skrypt instalacyjny i dezinstalacyjny dla Waterfoxa"
+
+#: install_waterfox_CLI.py:83
+msgid "display script version"
+msgstr "wyświetla wersję skryptu"
+
+#: install_waterfox_CLI.py:86
+msgid "set path to directory of installable package(s)"
+msgstr "ustawia ścieżkę do katalogu z instalowalnymi paczkami"
+
+#: install_waterfox_CLI.py:89
+msgid "set installation path (folder with package name will be here)"
+msgstr ""
+"ustawia ścieżkę instalacyjną (folder z nazwą paczki będzie się tam znajdował)"
+
+#: install_waterfox_CLI.py:91
+msgid ""
+"enable unattended installation mode (valid configuration file and full "
+"source path is required)"
+msgstr ""
+"aktywuje instalację nienadzorowaną (wymagany jest prawidłowy plik "
+"konfiguracyjny i pełna ścieżka do źródła)"
+
+#: install_waterfox_CLI.py:117 install_waterfox_CLI.py:121
+#: install_waterfox_CLI.py:123
+msgid "Install"
+msgstr "Zainstaluj"
+
+#: install_waterfox_CLI.py:117 install_waterfox_CLI.py:218
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+#: install_waterfox_CLI.py:119
+msgid "What do you want to do with Waterfox?"
+msgstr "Co chcesz zrobić z Waterfoxem?"
+
+#: install_waterfox_CLI.py:119 install_waterfox_CLI.py:255
+msgid "Quit"
+msgstr "Wyjdź"
+
+#: install_waterfox_CLI.py:126
+#, python-brace-format
+msgid ""
+"This program was created for installing Waterfox only for one user, because "
+"updater of this package doesn't work correctly for root user. If you wanted "
+"to install it for all users, then go to {URL} for more information, "
+"otherwise run this program again as normal user."
+msgstr ""
+"Ten program został stworzony do instalacji Waterfoxa jedynie dla jednego "
+"użytkownika, ponieważ aktualizator tej paczki nie działa prawidłowo dla "
+"administratora (użytkownika root). Jeżeli chciałeś go zainstalować dla "
+"wszystkich użytkowników, to wejdź na {URL} po więcej informacji, a w "
+"przeciwnym przypadku uruchom ten program ponownie jako zwykły użytkownik."
+
+#: install_waterfox_CLI.py:137 install_waterfox_CLI.py:222
+msgid "The specified path does not exist!"
+msgstr "Podana ścieżka nie istnieje!"
+
+#: install_waterfox_CLI.py:142
+msgid "Detecting installable packages..."
+msgstr "Wykrywanie instalowalnych paczek..."
+
+#: install_waterfox_CLI.py:165
+msgid "No installable packages found."
+msgstr "Brak instalowalnych paczek."
+
+#: install_waterfox_CLI.py:166
+msgid ""
+"Please place this script next to the tarball/AppImage packages or launch it "
+"again with flag -sp=<path>."
+msgstr ""
+"Proszę umieścić ten skrypt obok paczek tar/AppImage lub uruchomić go "
+"ponownie z flagą -sp=<ścieżka>."
+
+#: install_waterfox_CLI.py:172
+msgid "Which package are you interested in?"
+msgstr "Która paczka ciebie interesuje?"
+
+#: install_waterfox_CLI.py:173 install_waterfox_CLI.py:192
+#: install_waterfox_CLI.py:240
+msgid "None"
+msgstr "Żadna"
+
+#: install_waterfox_CLI.py:192
+msgid "Which package do you want to install?"
+msgstr "Którą paczkę chcesz zainstalować?"
+
+#: install_waterfox_CLI.py:205
+msgid "Do you want to add a desktop shortcut?"
+msgstr "Czy chcesz dodać skrót na pulpicie?"
+
+#: install_waterfox_CLI.py:208
+msgid "Do you want to use system's dictionaries?"
+msgstr "Czy chcesz korzystać ze słowników systemowych?"
+
+#: install_waterfox_CLI.py:211
+msgid ""
+"Do you want to remove tarball/AppImage package after completing the "
+"installation?"
+msgstr "Czy chcesz usunąć paczkę tar/AppImage po zakończeniu instalacji?"
+
+#: install_waterfox_CLI.py:224
+msgid "Detecting installed packages..."
+msgstr "Wykrywanie zainstalowanych paczek...."
+
+#: install_waterfox_CLI.py:233
+msgid "No installed packages found."
+msgstr "Brak zainstalowanych paczek."
+
+#: install_waterfox_CLI.py:234
+msgid "Please launch script again with flag -ip=<path>."
+msgstr "Proszę uruchomić skrypt ponownie z flagą  -ip=<ścieżka>."
+
+#: install_waterfox_CLI.py:240
+msgid "Which package do you want to uninstall?"
+msgstr "Którą paczkę chcesz odinstalować?"
+
+#: install_waterfox_CLI.py:243
+#, python-brace-format
+msgid "Detected Waterfox {chosenPackageType}."
+msgstr "Wykryto Waterfox {chosenPackageType}."
+
+#: install_waterfox_CLI.py:245
+#, python-brace-format
+msgid "Are you sure that you want to uninstall Waterfox {chosenPackageType}?"
+msgstr ""
+"Czy jesteś pewny(a), że chcesz odinstalować Waterfox {chosenPackageType}?"
+
+#: install_waterfox_CLI.py:251
+msgid "Do you want to remove file with installer settings?"
+msgstr "Czy chcesz usunąć plik z ustawieniami instalatora?"

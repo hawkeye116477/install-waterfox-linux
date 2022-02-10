@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the install_waterfox_GUI package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: install_waterfox_GUI 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 19:14+0100\n"
+"PO-Revision-Date: 2022-02-10 19:58+0100\n"
+"Last-Translator: hawkeye116477\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+
+#: install_waterfox_GUI.py:53 install_waterfox_GUI.py:85
+#: install_waterfox_GUI.py:190 GUI.glade:182
+msgid "Installation"
+msgstr "Instalacja"
+
+#: install_waterfox_GUI.py:54 GUI.glade:606
+msgid "Install"
+msgstr "Zainstaluj"
+
+#: install_waterfox_GUI.py:55 GUI.glade:486
+msgid ""
+"Click Install to begin the installation or click Close if you want to review "
+"or change any settings."
+msgstr ""
+"Kliknij Zainstaluj, aby rozpocząć instalację lub Zamknij, jeśli chcesz "
+"przejrzeć lub zmienić ustawienia."
+
+#: install_waterfox_GUI.py:57
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+#: install_waterfox_GUI.py:58
+msgid ""
+"Click Uninstall to begin the uninstallation or click Close if you want to "
+"review or change any settings."
+msgstr ""
+"Kliknij Odinstaluj, aby rozpocząć dezinstalację lub Zamknij, jeśli chcesz "
+"przejrzeć lub zmienić ustawienia."
+
+#: install_waterfox_GUI.py:79 install_waterfox_GUI.py:166 GUI.glade:183
+msgid "Uninstallation"
+msgstr "Dezinstalacja"
+
+#: install_waterfox_GUI.py:96
+msgid "Choose a file"
+msgstr "Wybierz  plik"
+
+#: install_waterfox_GUI.py:101 install_waterfox_GUI.py:125
+msgid "Select"
+msgstr "Wybierz"
+
+#: install_waterfox_GUI.py:120
+msgid "Choose a folder"
+msgstr "Wybierz katalog"
+
+#: GUI.glade:50
+msgid "To continue, accept the following license agreement."
+msgstr "Przed kontynuacją instalacji należy zaakceptować powyższe warunki."
+
+#: GUI.glade:105
+msgid "I accept this agreement"
+msgstr "Akceptuję warunki umowy"
+
+#: GUI.glade:124
+msgid "I don't accept this agreement"
+msgstr "Nie akceptuję warunków umowy"
+
+#: GUI.glade:167
+msgid "Select mode"
+msgstr "Wybierz tryb"
+
+#: GUI.glade:200
+msgid "Select your tarball or AppImage file"
+msgstr "Wybierz archiwum tar lub plik AppImage"
+
+#: GUI.glade:228 GUI.glade:287
+msgid "Browse"
+msgstr "Przeglądaj"
+
+#: GUI.glade:256
+msgid "Set installation path"
+msgstr "Ustaw ścieżkę instalacji"
+
+#: GUI.glade:313
+msgid "Select package"
+msgstr "Wybierz paczkę"
+
+#: GUI.glade:360 GUI.glade:436
+msgid "Select the additional tasks you would like this program to perform"
+msgstr "Wybierz dodatkowe zadania, które chcesz, aby ten program wykonał"
+
+#: GUI.glade:370
+msgid "Create a desktop shortcut"
+msgstr "Utwórz skrót na pulpicie"
+
+#: GUI.glade:386
+msgid "Use system's dictionaries"
+msgstr "Korzystaj ze słowników systemowych"
+
+#: GUI.glade:402
+msgid "Remove tarball/AppImage package after completing the installation"
+msgstr "Usuń paczkę tar/AppImage po zakończeniu instalacji"
+
+#: GUI.glade:446
+msgid "Remove file with installer settings"
+msgstr "Usuń plik z ustawieniami instalatora"
+
+#: GUI.glade:574
+msgid "Close"
+msgstr "Zamknij"
+
+#: GUI.glade:590
+msgid "Next >"
+msgstr "Dalej >"
+
+#: GUI.glade:621
+msgid "< Back"
+msgstr "< Wstecz"
