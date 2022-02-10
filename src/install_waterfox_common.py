@@ -188,8 +188,6 @@ exec {installPath}/waterfox-{lowerChosenPackageType}/waterfox "$@"
                   'w+', encoding='utf-8') as spellcheckPref:
             spellcheckPref.write(
                 'pref("spellchecker.dictionary_path", "{}");'.format(dictPath))
-        shutil.rmtree(pj(installPath, "waterfox-" +
-                      lowerChosenPackageType, "dictionaries"))
 
     # Remove installed archive file
     if removeArchive == "yes":

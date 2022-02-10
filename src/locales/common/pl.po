@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: install_waterfox_common 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 18:17+0100\n"
-"PO-Revision-Date: 2022-02-10 18:35+0100\n"
+"POT-Creation-Date: 2022-02-10 23:26+0100\n"
+"PO-Revision-Date: 2022-02-10 23:26+0100\n"
+"Last-Translator: hawkeye116477\n"
 "Language-Team: \n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.0\n"
-"Last-Translator: hawkeye116477\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n"
-"%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
 
 #: install_waterfox_common.py:75
 #, python-brace-format
@@ -57,16 +57,16 @@ msgstr "Instalowanie skrótu na pulpicie..."
 msgid "Adding path to system's dictionaries..."
 msgstr "Dodawanie ścieżki do systemowych słowników..."
 
-#: install_waterfox_common.py:196
+#: install_waterfox_common.py:194
 #, python-brace-format
 msgid "Removing {sourcePath} ..."
 msgstr "Usuwanie {sourcePath} ..."
 
-#: install_waterfox_common.py:200
+#: install_waterfox_common.py:198
 msgid "Saving settings..."
 msgstr "Zapisywanie ustawień..."
 
-#: install_waterfox_common.py:214
+#: install_waterfox_common.py:212
 #, python-brace-format
 msgid ""
 "Waterfox {chosenPackageType} has been installed in {installPath} "
@@ -75,53 +75,52 @@ msgstr ""
 "Waterfox {chosenPackageType} został zainstalowany w {installPath} "
 "{grinningFace}!"
 
-#: install_waterfox_common.py:225
+#: install_waterfox_common.py:223
 #, python-brace-format
 msgid "Removing {appPath} directory..."
 msgstr "Usuwanie katalogu {appPath}..."
 
-#: install_waterfox_common.py:232
+#: install_waterfox_common.py:230
 msgid "Removing executable file..."
 msgstr "Usuwanie pliku wykonywalnego..."
 
-#: install_waterfox_common.py:234
+#: install_waterfox_common.py:232
 #, python-brace-format
 msgid "Root priveleges are required to remove {execFile}!"
 msgstr "Do usunięcia {execFile} wymagane są uprawnienia roota!"
 
-#: install_waterfox_common.py:246
+#: install_waterfox_common.py:244
 msgid "Removing start menu shortcut..."
 msgstr "Usuwanie skrótu w menu start...."
 
-#: install_waterfox_common.py:248
+#: install_waterfox_common.py:246
 #, python-brace-format
 msgid "Root priveleges are required to remove {path}!"
 msgstr "Do usunięcia {path} wymagane są uprawnienia roota!"
 
-#: install_waterfox_common.py:258
+#: install_waterfox_common.py:256
 msgid "Removing desktop shortcut..."
 msgstr "Usuwanie skrótu na pulpicie..."
 
-#: install_waterfox_common.py:272 install_waterfox_common.py:276
+#: install_waterfox_common.py:270 install_waterfox_common.py:274
 #, python-brace-format
 msgid "Removing {file} ..."
 msgstr "Usuwanie {file} ..."
 
-#: install_waterfox_common.py:273
+#: install_waterfox_common.py:271
 msgid "Root priveleges are required to remove symlinks to icons!"
 msgstr "Aby usunąć symlinki do ikon, wymagane są uprawnienia roota!"
 
-#: install_waterfox_common.py:282
+#: install_waterfox_common.py:280
 #, python-brace-format
 msgid "Removing empty {installPath} directory..."
 msgstr "Usuwanie pustego katalogu {installPath}..."
 
-#: install_waterfox_common.py:287
+#: install_waterfox_common.py:285
 msgid "Removing file with installer settings..."
 msgstr "Usuwanie pliku z ustawieniami instalatora..."
 
-#: install_waterfox_common.py:293
+#: install_waterfox_common.py:291
 #, python-brace-format
 msgid "Waterfox {chosenPackageType} has been uninstalled {disappointedFace}."
-msgstr ""
-"Waterfox {chosenPackageType} został odinstalowany {disappointedFace}."
+msgstr "Waterfox {chosenPackageType} został odinstalowany {disappointedFace}."

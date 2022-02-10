@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: install_waterfox_common 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 19:14+0100\n"
+"POT-Creation-Date: 2022-02-10 23:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,68 +55,68 @@ msgstr ""
 msgid "Adding path to system's dictionaries..."
 msgstr ""
 
-#: install_waterfox_common.py:196
+#: install_waterfox_common.py:194
 #, python-brace-format
 msgid "Removing {sourcePath} ..."
 msgstr ""
 
-#: install_waterfox_common.py:200
+#: install_waterfox_common.py:198
 msgid "Saving settings..."
 msgstr ""
 
-#: install_waterfox_common.py:214
+#: install_waterfox_common.py:212
 #, python-brace-format
 msgid ""
 "Waterfox {chosenPackageType} has been installed in {installPath} "
 "{grinningFace}!"
 msgstr ""
 
-#: install_waterfox_common.py:225
+#: install_waterfox_common.py:223
 #, python-brace-format
 msgid "Removing {appPath} directory..."
 msgstr ""
 
-#: install_waterfox_common.py:232
+#: install_waterfox_common.py:230
 msgid "Removing executable file..."
 msgstr ""
 
-#: install_waterfox_common.py:234
+#: install_waterfox_common.py:232
 #, python-brace-format
 msgid "Root priveleges are required to remove {execFile}!"
 msgstr ""
 
-#: install_waterfox_common.py:246
+#: install_waterfox_common.py:244
 msgid "Removing start menu shortcut..."
 msgstr ""
 
-#: install_waterfox_common.py:248
+#: install_waterfox_common.py:246
 #, python-brace-format
 msgid "Root priveleges are required to remove {path}!"
 msgstr ""
 
-#: install_waterfox_common.py:258
+#: install_waterfox_common.py:256
 msgid "Removing desktop shortcut..."
 msgstr ""
 
-#: install_waterfox_common.py:272 install_waterfox_common.py:276
+#: install_waterfox_common.py:270 install_waterfox_common.py:274
 #, python-brace-format
 msgid "Removing {file} ..."
 msgstr ""
 
-#: install_waterfox_common.py:273
+#: install_waterfox_common.py:271
 msgid "Root priveleges are required to remove symlinks to icons!"
 msgstr ""
 
-#: install_waterfox_common.py:282
+#: install_waterfox_common.py:280
 #, python-brace-format
 msgid "Removing empty {installPath} directory..."
 msgstr ""
 
-#: install_waterfox_common.py:287
+#: install_waterfox_common.py:285
 msgid "Removing file with installer settings..."
 msgstr ""
 
-#: install_waterfox_common.py:293
+#: install_waterfox_common.py:291
 #, python-brace-format
 msgid "Waterfox {chosenPackageType} has been uninstalled {disappointedFace}."
 msgstr ""
