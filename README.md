@@ -7,8 +7,8 @@ Installs and uninstalls official and AppImage Waterfox packages on every 64-bit 
 # Instructions
 ## a) GUI (graphical)
 ### Running application
-To run this app you'll need `gettext`, `Python 3.5+`, `PyGObject (python3-gi/python-gobject)` and `GTK+ 3.22+ (libgtk-3-0/gtk3)` installed, but in most distributions they are already available by default.
-Then after you extract zip archive, you need to double click install_waterfox_GUI.py file to launch it.
+To run this app you'll need `gettext`, `Python 3.5+`, `PyGObject (python3-gi/python-gobject)`, `Python 3 Cairo bindings for the GObject library (python3-gi-cairo/python-cairo)` and `GTK+ 3.22+ (libgtk-3-0/gtk3)` installed, but in most distributions they are already available by default.
+Then after you extract zip archive, you need to launch `install_waterfox_GUI.py` file.
 
 ### Installing/uninstalling Waterfox
 It's rather not necessary to describe that, cuz it's really easy to do that.
