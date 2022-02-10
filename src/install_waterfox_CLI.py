@@ -163,8 +163,7 @@ if chosenAction == _("Install"):
 
     if len(packageTypes) < 1:
         print(_("No installable packages found."))
-        print(_("Please place this script next to the tarball/AppImage packages " +
-              "or launch it again with flag -sp=<path>."))
+        print(_("Please launch this script again with flag -sp=<path>."))
         sys.exit(0)
 
     # Create menu with package types
@@ -231,7 +230,7 @@ elif chosenAction == _("Uninstall"):
 
     if len(packageTypes) < 1:
         print(_("No installed packages found."))
-        print(_("Please launch script again with flag -ip=<path>."))
+        print(_("Please launch this script again with flag -ip=<path>."))
         sys.exit(0)
 
     chosenPackageType = ""

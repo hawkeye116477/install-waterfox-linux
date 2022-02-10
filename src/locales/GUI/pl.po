@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: install_waterfox_GUI 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 19:14+0100\n"
-"PO-Revision-Date: 2022-02-10 19:58+0100\n"
+"POT-Creation-Date: 2022-02-10 22:05+0100\n"
+"PO-Revision-Date: 2022-02-10 22:10+0100\n"
 "Last-Translator: hawkeye116477\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -19,16 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
 
-#: install_waterfox_GUI.py:53 install_waterfox_GUI.py:85
-#: install_waterfox_GUI.py:190 GUI.glade:182
+#: install_waterfox_GUI.py:55 install_waterfox_GUI.py:87
+#: install_waterfox_GUI.py:192 GUI.glade:181
 msgid "Installation"
 msgstr "Instalacja"
 
-#: install_waterfox_GUI.py:54 GUI.glade:606
+#: install_waterfox_GUI.py:56 GUI.glade:603
 msgid "Install"
 msgstr "Zainstaluj"
 
-#: install_waterfox_GUI.py:55 GUI.glade:486
+#: install_waterfox_GUI.py:57 GUI.glade:484
 msgid ""
 "Click Install to begin the installation or click Close if you want to review "
 "or change any settings."
@@ -36,11 +36,11 @@ msgstr ""
 "Kliknij Zainstaluj, aby rozpocząć instalację lub Zamknij, jeśli chcesz "
 "przejrzeć lub zmienić ustawienia."
 
-#: install_waterfox_GUI.py:57
+#: install_waterfox_GUI.py:59
 msgid "Uninstall"
 msgstr "Odinstaluj"
 
-#: install_waterfox_GUI.py:58
+#: install_waterfox_GUI.py:60
 msgid ""
 "Click Uninstall to begin the uninstallation or click Close if you want to "
 "review or change any settings."
@@ -48,19 +48,19 @@ msgstr ""
 "Kliknij Odinstaluj, aby rozpocząć dezinstalację lub Zamknij, jeśli chcesz "
 "przejrzeć lub zmienić ustawienia."
 
-#: install_waterfox_GUI.py:79 install_waterfox_GUI.py:166 GUI.glade:183
+#: install_waterfox_GUI.py:81 install_waterfox_GUI.py:168 GUI.glade:182
 msgid "Uninstallation"
 msgstr "Dezinstalacja"
 
-#: install_waterfox_GUI.py:96
+#: install_waterfox_GUI.py:98
 msgid "Choose a file"
 msgstr "Wybierz  plik"
 
-#: install_waterfox_GUI.py:101 install_waterfox_GUI.py:125
+#: install_waterfox_GUI.py:103 install_waterfox_GUI.py:127
 msgid "Select"
 msgstr "Wybierz"
 
-#: install_waterfox_GUI.py:120
+#: install_waterfox_GUI.py:122
 msgid "Choose a folder"
 msgstr "Wybierz katalog"
 
@@ -76,54 +76,54 @@ msgstr "Akceptuję warunki umowy"
 msgid "I don't accept this agreement"
 msgstr "Nie akceptuję warunków umowy"
 
-#: GUI.glade:167
+#: GUI.glade:166
 msgid "Select mode"
 msgstr "Wybierz tryb"
 
-#: GUI.glade:200
+#: GUI.glade:199
 msgid "Select your tarball or AppImage file"
 msgstr "Wybierz archiwum tar lub plik AppImage"
 
-#: GUI.glade:228 GUI.glade:287
+#: GUI.glade:227 GUI.glade:286
 msgid "Browse"
 msgstr "Przeglądaj"
 
-#: GUI.glade:256
+#: GUI.glade:255
 msgid "Set installation path"
 msgstr "Ustaw ścieżkę instalacji"
 
-#: GUI.glade:313
+#: GUI.glade:312
 msgid "Select package"
 msgstr "Wybierz paczkę"
 
-#: GUI.glade:360 GUI.glade:436
+#: GUI.glade:359 GUI.glade:435
 msgid "Select the additional tasks you would like this program to perform"
 msgstr "Wybierz dodatkowe zadania, które chcesz, aby ten program wykonał"
 
-#: GUI.glade:370
+#: GUI.glade:369
 msgid "Create a desktop shortcut"
 msgstr "Utwórz skrót na pulpicie"
 
-#: GUI.glade:386
+#: GUI.glade:385
 msgid "Use system's dictionaries"
 msgstr "Korzystaj ze słowników systemowych"
 
-#: GUI.glade:402
+#: GUI.glade:401
 msgid "Remove tarball/AppImage package after completing the installation"
 msgstr "Usuń paczkę tar/AppImage po zakończeniu instalacji"
 
-#: GUI.glade:446
+#: GUI.glade:445
 msgid "Remove file with installer settings"
 msgstr "Usuń plik z ustawieniami instalatora"
 
-#: GUI.glade:574
+#: GUI.glade:571
 msgid "Close"
 msgstr "Zamknij"
 
-#: GUI.glade:590
+#: GUI.glade:587
 msgid "Next >"
 msgstr "Dalej >"
 
-#: GUI.glade:621
+#: GUI.glade:618
 msgid "< Back"
 msgstr "< Wstecz"

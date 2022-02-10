@@ -45,7 +45,7 @@ fi
 if [ "$1" == "GUI" ]; then
     VERSION=$(grep -hr "appVersion" ./src/install_waterfox_GUI.py | head -1 | cut -d "=" -f2 | awk '{print $1}' | tr -d '"')
 else
-    VERSION=$(./install_waterfox_CLI.py -v | sed 's/CLI installer of Waterfox for Linux //')
+    VERSION=$(./src/install_waterfox_CLI.py -v | sed 's/CLI installer of Waterfox for Linux //')
 fi
 
 zipFile="./artifacts/install_waterfox_$1-$VERSION.zip"
