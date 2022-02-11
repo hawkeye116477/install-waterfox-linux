@@ -16,7 +16,7 @@ It's rather not necessary to describe that, cuz it's really easy to do that.
 ## b) CLI (command line)
 ### Running script
 To run this script you'll need `gettext` and `Python 3.5+` installed, but in most distributions they are already available by default.
-Then after you extract zip archive, you need to launch install_waterfox_CLI.py script in your console.
+Then after you extract zip archive, you need to launch `install_waterfox_CLI.py` script in your console.
 
 ### Available options
 You can launch script with flag `-h` to get list of available options.
@@ -34,4 +34,4 @@ By default it looks for programs in last saved path. If you have apps in multipl
 Script should ask you if you want to remove configuration file and display message when uninstallation completed.
 
 ## c) For translators
-If you want to translate installer to your language, then you need Poedit installed. If you already have it, then go to `src/locales/GUI` directory and see if `yourLanguageCode.po` file is available. If not, then open `install_waterfox_GUI.pot` file in Poedit and press button to create new translation, otherwise just open `yourLanguageCode.po` file in Poedit and start translating. You should do that similarly with files on `src/locales/common` and `src/locales/GUI` directories. When you're done with it, just send **Pull Request** with these files.
+If you want to translate installer to your language, then you need `Poedit` installed. If you already have it, then go to `src/locales/GUI` directory and see if `yourLanguageCode.po` file is available. If not, then open `install_waterfox_GUI.pot` file in `Poedit` and press button to create new translation, otherwise just open `yourLanguageCode.po` file in `Poedit` and start translating. You should do that similarly with files on `src/locales/common` and `src/locales/CLI` directories. When you're done with it, just send **Pull Request** with these files.
