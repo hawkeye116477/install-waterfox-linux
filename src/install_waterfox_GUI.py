@@ -20,7 +20,7 @@ import install_waterfox_common as installcommon
 
 
 appName = "GUI installer of Waterfox for Linux"
-appVersion = "1.0.0"
+appVersion = "1.0.1"
 pj = os.path.join
 
 domain = "install_waterfox_GUI"
@@ -192,14 +192,8 @@ def finalize():
     if mode == _("Installation"):
         chosenPackage = fileChooseField.get_text()
         packageFile = os.path.basename(chosenPackage)
-        if re.match(r"^waterfox-classic", packageFile):
-            chosenPackageType = "Classic"
-        elif re.match(r"^waterfox-(G3|g3)", packageFile):
-            chosenPackageType = "G3"
-        elif re.match(r"^waterfox-(G4|g4)", packageFile):
-            chosenPackageType = "G4"
-        else:
-            chosenPackageType = "Current"
+        if re.match(r"^waterfox-", packageFile):
+            chosenPackageType = str(os.path.splitext(packageFile)[0]).replace("waterfox-", "").capitalize().split(".", 1)[0].split("-", 1)[0]
         installcommon.install(chosenPackage, installPath, chosenPackageType,
                               bool2Str(createDesktopShortcut.get_active()),
                               bool2Str(systemDictionaries.get_active()),

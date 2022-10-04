@@ -36,7 +36,7 @@ import re
 import install_waterfox_common as installcommon
 
 appName = "CLI installer of Waterfox for Linux"
-appVersion = "1.5.0"
+appVersion = "1.5.1"
 pj = os.path.join
 
 domain = "install_waterfox_CLI"
@@ -149,14 +149,8 @@ if chosenAction == _("Install"):
     if packages:
         for package in packages:
             package = os.path.basename(package)
-            if re.match(r"^waterfox-classic", package):
-                packageTypes.append("Classic")
-            if re.match(r"^waterfox-current", package):
-                packageTypes.append("Current")
-            if re.match(r"^waterfox-(G3|g3)", package):
-                packageTypes.append("G3")
-            if re.match(r"^waterfox-(G4|g4)", package):
-                packageTypes.append("G4")
+            if re.match(r"^waterfox-", package):
+                packageTypes.append(str(os.path.splitext(package)[0]).replace("waterfox-", "").capitalize().split(".", 1)[0].split("-", 1)[0])
 
     if packageTypes:
         packageTypes = list(sorted(set(packageTypes)))
@@ -173,17 +167,10 @@ if chosenAction == _("Install"):
     else:
         chosenPackageType = packageTypes[0]
 
-    if chosenPackageType == "G3":
-        packageTypeName = "(G3|g3)"
-    elif chosenPackageType == "G4":
-        packageTypeName = "(G4|g4)"
-    else:
-        packageTypeName = chosenPackageType.lower()
-
     chosenPackages = []
-    if packages and packageTypeName:
+    if packages and chosenPackageType != "None":
         for package in packages:
-            if re.match(r"^waterfox\-" + packageTypeName, os.path.basename(package)):
+            if re.match(r"^waterfox\-" + chosenPackageType, os.path.basename(package), re.IGNORECASE):
                 chosenPackages.append(package)
 
     if len(chosenPackages) > 1:
