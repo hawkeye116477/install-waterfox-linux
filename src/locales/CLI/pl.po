@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: install_waterfox_CLI 1.5.0\n"
+"Project-Id-Version: install_waterfox_CLI 1.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 22:05+0100\n"
-"PO-Revision-Date: 2022-02-10 22:06+0100\n"
+"POT-Creation-Date: 2022-11-19 15:28+0100\n"
+"PO-Revision-Date: 2022-11-19 15:43+0100\n"
 "Last-Translator: hawkeye116477\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -17,58 +17,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.1\n"
 
 #: /usr/lib/python3.10/argparse.py:296
 msgid "usage: "
 msgstr "użycie: "
 
-#: /usr/lib/python3.10/argparse.py:857
+#: /usr/lib/python3.10/argparse.py:861
 msgid ".__call__() not defined"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1200
+#: /usr/lib/python3.10/argparse.py:1204
 #, python-format
 msgid "unknown parser %(parser_name)r (choices: %(choices)s)"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1260
+#: /usr/lib/python3.10/argparse.py:1264
 #, python-format
 msgid "argument \"-\" with mode %r"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1269
+#: /usr/lib/python3.10/argparse.py:1273
 #, python-format
 msgid "can't open '%(filename)s': %(error)s"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1478
+#: /usr/lib/python3.10/argparse.py:1482
 #, python-format
 msgid "cannot merge actions - two groups are named %r"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1516
+#: /usr/lib/python3.10/argparse.py:1520
 msgid "'required' is an invalid argument for positionals"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1538
+#: /usr/lib/python3.10/argparse.py:1542
 #, python-format
 msgid ""
 "invalid option string %(option)r: must start with a character "
 "%(prefix_chars)r"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1556
+#: /usr/lib/python3.10/argparse.py:1560
 #, python-format
 msgid "dest= is required for options like %r"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1573
+#: /usr/lib/python3.10/argparse.py:1577
 #, python-format
 msgid "invalid conflict_resolution value: %r"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1591
+#: /usr/lib/python3.10/argparse.py:1595
 #, python-format
 msgid "conflicting option string: %s"
 msgid_plural "conflicting option strings: %s"
@@ -76,64 +76,64 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: /usr/lib/python3.10/argparse.py:1657
+#: /usr/lib/python3.10/argparse.py:1661
 msgid "mutually exclusive arguments must be optional"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1724
+#: /usr/lib/python3.10/argparse.py:1729
 msgid "positional arguments"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:1725
+#: /usr/lib/python3.10/argparse.py:1730
 msgid "options"
 msgstr "opcje"
 
-#: /usr/lib/python3.10/argparse.py:1740
+#: /usr/lib/python3.10/argparse.py:1745
 msgid "show this help message and exit"
 msgstr "wyświetla ten tekst i kończy pracę"
 
-#: /usr/lib/python3.10/argparse.py:1771
+#: /usr/lib/python3.10/argparse.py:1776
 msgid "cannot have multiple subparser arguments"
 msgstr "nie może mieć wielu argumentów subparsera"
 
-#: /usr/lib/python3.10/argparse.py:1823 /usr/lib/python3.10/argparse.py:2334
+#: /usr/lib/python3.10/argparse.py:1828 /usr/lib/python3.10/argparse.py:2339
 #, python-format
 msgid "unrecognized arguments: %s"
 msgstr "nierozpoznane argumenty: %s"
 
-#: /usr/lib/python3.10/argparse.py:1924
+#: /usr/lib/python3.10/argparse.py:1929
 #, python-format
 msgid "not allowed with argument %s"
 msgstr "niedozwolone z argumentem %s"
 
-#: /usr/lib/python3.10/argparse.py:1970 /usr/lib/python3.10/argparse.py:1984
+#: /usr/lib/python3.10/argparse.py:1975 /usr/lib/python3.10/argparse.py:1989
 #, python-format
 msgid "ignored explicit argument %r"
 msgstr "zignorowano argument %r"
 
-#: /usr/lib/python3.10/argparse.py:2091
+#: /usr/lib/python3.10/argparse.py:2096
 #, python-format
 msgid "the following arguments are required: %s"
 msgstr "wymagane są następujące argumenty: %s"
 
-#: /usr/lib/python3.10/argparse.py:2106
+#: /usr/lib/python3.10/argparse.py:2111
 #, python-format
 msgid "one of the arguments %s is required"
 msgstr "jeden z argumentów %s jest wymagany"
 
-#: /usr/lib/python3.10/argparse.py:2149
+#: /usr/lib/python3.10/argparse.py:2154
 msgid "expected one argument"
 msgstr "oczekiwano jednego argumentu"
 
-#: /usr/lib/python3.10/argparse.py:2150
+#: /usr/lib/python3.10/argparse.py:2155
 msgid "expected at most one argument"
 msgstr "oczekiwano co najwyżej jednego argumentu"
 
-#: /usr/lib/python3.10/argparse.py:2151
+#: /usr/lib/python3.10/argparse.py:2156
 msgid "expected at least one argument"
 msgstr "oczekiwano co najmniej jednego argumentu"
 
-#: /usr/lib/python3.10/argparse.py:2155
+#: /usr/lib/python3.10/argparse.py:2160
 #, python-format
 msgid "expected %s argument"
 msgid_plural "expected %s arguments"
@@ -141,40 +141,40 @@ msgstr[0] "oczekiwano %s argumentu"
 msgstr[1] "oczekiwano %s argumentów"
 msgstr[2] "oczekiwano %s argumentów"
 
-#: /usr/lib/python3.10/argparse.py:2213
+#: /usr/lib/python3.10/argparse.py:2218
 #, python-format
 msgid "ambiguous option: %(option)s could match %(matches)s"
 msgstr ""
 
-#: /usr/lib/python3.10/argparse.py:2277
+#: /usr/lib/python3.10/argparse.py:2282
 #, python-format
 msgid "unexpected option string: %s"
 msgstr "nieoczekiwany ciąg opcji: %s"
 
-#: /usr/lib/python3.10/argparse.py:2474
+#: /usr/lib/python3.10/argparse.py:2479
 #, python-format
 msgid "%r is not callable"
 msgstr "%r jest niemożliwa do wywołania"
 
-#: /usr/lib/python3.10/argparse.py:2491
+#: /usr/lib/python3.10/argparse.py:2496
 #, python-format
 msgid "invalid %(type)s value: %(value)r"
 msgstr "nieprawidłowa wartość %(type)s: %(value)r"
 
-#: /usr/lib/python3.10/argparse.py:2502
+#: /usr/lib/python3.10/argparse.py:2507
 #, python-format
 msgid "invalid choice: %(value)r (choose from %(choices)s)"
 msgstr "nieprawidłowy wybór: %(value)r (wybierz z %(choices)s)"
 
-#: /usr/lib/python3.10/argparse.py:2578
+#: /usr/lib/python3.10/argparse.py:2583
 #, python-format
 msgid "%(prog)s: error: %(message)s\n"
 msgstr "%(prog)s: błąd: %(message)s\n"
 
 #: install_waterfox_CLI.py:52 install_waterfox_CLI.py:71
-#: install_waterfox_CLI.py:205 install_waterfox_CLI.py:208
-#: install_waterfox_CLI.py:212 install_waterfox_CLI.py:246
-#: install_waterfox_CLI.py:251
+#: install_waterfox_CLI.py:192 install_waterfox_CLI.py:195
+#: install_waterfox_CLI.py:199 install_waterfox_CLI.py:233
+#: install_waterfox_CLI.py:238
 msgid "Yes"
 msgstr "Tak"
 
@@ -190,10 +190,9 @@ msgstr ""
 "\n"
 "Nieprawidłowa opcja. Proszę spróbować ponownie."
 
-#: install_waterfox_CLI.py:73 install_waterfox_CLI.py:205
-#: install_waterfox_CLI.py:208 install_waterfox_CLI.py:212
-#: install_waterfox_CLI.py:246 install_waterfox_CLI.py:247
-#: install_waterfox_CLI.py:251
+#: install_waterfox_CLI.py:73 install_waterfox_CLI.py:192
+#: install_waterfox_CLI.py:195 install_waterfox_CLI.py:199
+#: install_waterfox_CLI.py:233 install_waterfox_CLI.py:238
 msgid "No"
 msgstr "Nie"
 
@@ -227,7 +226,7 @@ msgstr ""
 msgid "Install"
 msgstr "Zainstaluj"
 
-#: install_waterfox_CLI.py:117 install_waterfox_CLI.py:217
+#: install_waterfox_CLI.py:117 install_waterfox_CLI.py:204
 msgid "Uninstall"
 msgstr "Odinstaluj"
 
@@ -235,7 +234,7 @@ msgstr "Odinstaluj"
 msgid "What do you want to do with Waterfox?"
 msgstr "Co chcesz zrobić z Waterfoxem?"
 
-#: install_waterfox_CLI.py:119 install_waterfox_CLI.py:254
+#: install_waterfox_CLI.py:119 install_waterfox_CLI.py:241
 msgid "Quit"
 msgstr "Wyjdź"
 
@@ -253,7 +252,7 @@ msgstr ""
 "wszystkich użytkowników, to wejdź na {URL} po więcej informacji, a w "
 "przeciwnym przypadku uruchom ten program ponownie jako zwykły użytkownik."
 
-#: install_waterfox_CLI.py:137 install_waterfox_CLI.py:221
+#: install_waterfox_CLI.py:137 install_waterfox_CLI.py:208
 msgid "The specified path does not exist!"
 msgstr "Podana ścieżka nie istnieje!"
 
@@ -261,75 +260,68 @@ msgstr "Podana ścieżka nie istnieje!"
 msgid "Detecting installable packages..."
 msgstr "Wykrywanie instalowalnych paczek..."
 
-#: install_waterfox_CLI.py:165
+#: install_waterfox_CLI.py:159
 msgid "No installable packages found."
 msgstr "Brak instalowalnych paczek."
 
-#: install_waterfox_CLI.py:166
+#: install_waterfox_CLI.py:160
 msgid "Please launch this script again with flag -sp=<path>."
 msgstr "Proszę uruchomić ten skrypt ponownie z flagą -sp=<ścieżka>."
 
-#: install_waterfox_CLI.py:171
+#: install_waterfox_CLI.py:165
 msgid "Which package are you interested in?"
 msgstr "Która paczka ciebie interesuje?"
 
-#: install_waterfox_CLI.py:172 install_waterfox_CLI.py:191
-#: install_waterfox_CLI.py:239
+#: install_waterfox_CLI.py:166 install_waterfox_CLI.py:178
+#: install_waterfox_CLI.py:226
 msgid "None"
 msgstr "Żadna"
 
-#: install_waterfox_CLI.py:191
+#: install_waterfox_CLI.py:178
 msgid "Which package do you want to install?"
 msgstr "Którą paczkę chcesz zainstalować?"
 
-#: install_waterfox_CLI.py:204
+#: install_waterfox_CLI.py:191
 msgid "Do you want to add a desktop shortcut?"
 msgstr "Czy chcesz dodać skrót na pulpicie?"
 
-#: install_waterfox_CLI.py:207
+#: install_waterfox_CLI.py:194
 msgid "Do you want to use system's dictionaries?"
 msgstr "Czy chcesz korzystać ze słowników systemowych?"
 
-#: install_waterfox_CLI.py:210
+#: install_waterfox_CLI.py:197
 msgid ""
 "Do you want to remove tarball/AppImage package after completing the "
 "installation?"
 msgstr "Czy chcesz usunąć paczkę tar/AppImage po zakończeniu instalacji?"
 
-#: install_waterfox_CLI.py:223
+#: install_waterfox_CLI.py:210
 msgid "Detecting installed packages..."
 msgstr "Wykrywanie zainstalowanych paczek...."
 
-#: install_waterfox_CLI.py:232
+#: install_waterfox_CLI.py:219
 msgid "No installed packages found."
 msgstr "Brak zainstalowanych paczek."
 
-#: install_waterfox_CLI.py:233
+#: install_waterfox_CLI.py:220
 msgid "Please launch this script again with flag -ip=<path>."
 msgstr "Proszę uruchomić ten skrypt ponownie z flagą -ip=<ścieżka>."
 
-#: install_waterfox_CLI.py:239
+#: install_waterfox_CLI.py:226
 msgid "Which package do you want to uninstall?"
 msgstr "Którą paczkę chcesz odinstalować?"
 
-#: install_waterfox_CLI.py:242
+#: install_waterfox_CLI.py:229
 #, python-brace-format
 msgid "Detected Waterfox {chosenPackageType}."
 msgstr "Wykryto Waterfox {chosenPackageType}."
 
-#: install_waterfox_CLI.py:244
+#: install_waterfox_CLI.py:231
 #, python-brace-format
 msgid "Are you sure that you want to uninstall Waterfox {chosenPackageType}?"
 msgstr ""
 "Czy jesteś pewny(a), że chcesz odinstalować Waterfox {chosenPackageType}?"
 
-#: install_waterfox_CLI.py:250
+#: install_waterfox_CLI.py:237
 msgid "Do you want to remove file with installer settings?"
 msgstr "Czy chcesz usunąć plik z ustawieniami instalatora?"
-
-#~ msgid ""
-#~ "Please place this script next to the tarball/AppImage packages or launch "
-#~ "it again with flag -sp=<path>."
-#~ msgstr ""
-#~ "Proszę umieścić ten skrypt obok paczek tar/AppImage lub uruchomić go "
-#~ "ponownie z flagą -sp=<ścieżka>."

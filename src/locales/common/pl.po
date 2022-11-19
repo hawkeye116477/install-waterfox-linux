@@ -5,19 +5,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: install_waterfox_common 1.5.0\n"
+"Project-Id-Version: install_waterfox_common 1.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 23:55+0100\n"
-"PO-Revision-Date: 2022-02-10 23:55+0100\n"
+"POT-Creation-Date: 2022-11-19 15:28+0100\n"
+"PO-Revision-Date: 2022-11-19 15:42+0100\n"
 "Last-Translator: hawkeye116477\n"
 "Language-Team: \n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.1\n"
 
 #: install_waterfox_common.py:75
 #, python-brace-format
@@ -41,32 +41,32 @@ msgstr "Tworzenie pliku wykonywalnego..."
 msgid "Generating start menu shortcut..."
 msgstr "Generowanie skrótu do menu start..."
 
-#: install_waterfox_common.py:151
+#: install_waterfox_common.py:158
 msgid "Creating symlinks to icons..."
 msgstr "Tworzenie dowiązań symbolicznych do ikon..."
 
-#: install_waterfox_common.py:163
+#: install_waterfox_common.py:170
 msgid "Refreshing icons cache..."
 msgstr "Odświeżanie pamięci podręcznej ikon..."
 
-#: install_waterfox_common.py:171
+#: install_waterfox_common.py:178
 msgid "Installing desktop shortcut..."
 msgstr "Instalowanie skrótu na pulpicie..."
 
-#: install_waterfox_common.py:178
+#: install_waterfox_common.py:185
 msgid "Adding path to system's dictionaries..."
 msgstr "Dodawanie ścieżki do systemowych słowników..."
 
-#: install_waterfox_common.py:194
+#: install_waterfox_common.py:201
 #, python-brace-format
 msgid "Removing {sourcePath} ..."
 msgstr "Usuwanie {sourcePath} ..."
 
-#: install_waterfox_common.py:198
+#: install_waterfox_common.py:205
 msgid "Saving settings..."
 msgstr "Zapisywanie ustawień..."
 
-#: install_waterfox_common.py:216
+#: install_waterfox_common.py:223
 #, python-brace-format
 msgid ""
 "Waterfox {chosenPackageType} has been installed in {installPath} "
@@ -75,52 +75,52 @@ msgstr ""
 "Waterfox {chosenPackageType} został zainstalowany w {installPath} "
 "{grinningFace}!"
 
-#: install_waterfox_common.py:227
+#: install_waterfox_common.py:234
 #, python-brace-format
 msgid "Removing {appPath} directory..."
 msgstr "Usuwanie katalogu {appPath}..."
 
-#: install_waterfox_common.py:234
+#: install_waterfox_common.py:241
 msgid "Removing executable file..."
 msgstr "Usuwanie pliku wykonywalnego..."
 
-#: install_waterfox_common.py:236
+#: install_waterfox_common.py:243
 #, python-brace-format
 msgid "Root priveleges are required to remove {execFile}!"
 msgstr "Do usunięcia {execFile} wymagane są uprawnienia roota!"
 
-#: install_waterfox_common.py:248
+#: install_waterfox_common.py:255
 msgid "Removing start menu shortcut..."
 msgstr "Usuwanie skrótu w menu start...."
 
-#: install_waterfox_common.py:250
+#: install_waterfox_common.py:257
 #, python-brace-format
 msgid "Root priveleges are required to remove {path}!"
 msgstr "Do usunięcia {path} wymagane są uprawnienia roota!"
 
-#: install_waterfox_common.py:260
+#: install_waterfox_common.py:267
 msgid "Removing desktop shortcut..."
 msgstr "Usuwanie skrótu na pulpicie..."
 
-#: install_waterfox_common.py:274 install_waterfox_common.py:278
+#: install_waterfox_common.py:281 install_waterfox_common.py:285
 #, python-brace-format
 msgid "Removing {file} ..."
 msgstr "Usuwanie {file} ..."
 
-#: install_waterfox_common.py:275
+#: install_waterfox_common.py:282
 msgid "Root priveleges are required to remove symlinks to icons!"
 msgstr "Aby usunąć symlinki do ikon, wymagane są uprawnienia roota!"
 
-#: install_waterfox_common.py:284
+#: install_waterfox_common.py:291
 #, python-brace-format
 msgid "Removing empty {installPath} directory..."
 msgstr "Usuwanie pustego katalogu {installPath}..."
 
-#: install_waterfox_common.py:289
+#: install_waterfox_common.py:296
 msgid "Removing file with installer settings..."
 msgstr "Usuwanie pliku z ustawieniami instalatora..."
 
-#: install_waterfox_common.py:299
+#: install_waterfox_common.py:306
 #, python-brace-format
 msgid "Waterfox {chosenPackageType} has been uninstalled {disappointedFace}."
 msgstr "Waterfox {chosenPackageType} został odinstalowany {disappointedFace}."
