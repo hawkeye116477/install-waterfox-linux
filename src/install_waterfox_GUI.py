@@ -20,7 +20,7 @@ import install_waterfox_common as installcommon
 
 
 appName = "GUI installer of Waterfox for Linux"
-appVersion = "1.0.1"
+appVersion = "1.0.2"
 pj = os.path.join
 
 domain = "install_waterfox_GUI"

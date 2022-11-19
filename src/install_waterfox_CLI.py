@@ -36,7 +36,7 @@ import re
 import install_waterfox_common as installcommon
 
 appName = "CLI installer of Waterfox for Linux"
-appVersion = "1.5.1"
+appVersion = "1.5.2"
 pj = os.path.join
 
 domain = "install_waterfox_CLI"
