@@ -210,7 +210,7 @@ elif chosenAction == _("Uninstall"):
     print(_("Detecting installed packages..."))
     packageTypes = []
     for entry in os.scandir(installPath):
-        if entry.is_dir() and re.match(r"^waterfox-(classic|current|g\d+)", entry.name):
+        if entry.is_dir() and re.match(r"^waterfox-", entry.name):
             packageTypes.append(entry.name.replace("waterfox-", "").title())
     if packageTypes:
         packageTypes = list(sorted(set(packageTypes)))
@@ -231,7 +231,7 @@ elif chosenAction == _("Uninstall"):
     confirmed = menu(_("Are you sure that you want to uninstall Waterfox {chosenPackageType}?"
                        .format(**locals())),
                      [_("Yes"), _("No")], "")
-    if confirmed == _("No"):
+    if confirmed == "no":
         sys.exit(0)
 
     removeConfFile = menu(_("Do you want to remove file with installer settings?"),

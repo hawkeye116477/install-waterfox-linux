@@ -170,7 +170,7 @@ def setPackageNames():
         if os.path.exists(installPathField.get_text()):
             packageTypes = []
             for entry in os.scandir(installPathField.get_text()):
-                if entry.is_dir() and re.match(r"^waterfox-(classic|current|g\d+)", entry.name):
+                if entry.is_dir() and re.match(r"^waterfox-", entry.name):
                     packageTypes.append(
                         entry.name.replace("waterfox-", "").title())
             if packageTypes:
