@@ -228,8 +228,8 @@ elif chosenAction == _("Uninstall"):
         chosenPackageType = packageTypes[0]
         print(_("Detected Waterfox {chosenPackageType}.").format(**locals()))
 
-    confirmed = menu(_("Are you sure that you want to uninstall Waterfox {chosenPackageType}?"
-                       .format(**locals())),
+    confirmed = menu(_("Are you sure that you want to uninstall Waterfox {chosenPackageType}?")
+                       .format(**locals()),
                      [_("Yes"), _("No")], "")
     if confirmed == "no":
         sys.exit(0)
