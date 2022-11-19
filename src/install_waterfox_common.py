@@ -142,6 +142,13 @@ exec {installPath}/waterfox-{lowerChosenPackageType}/waterfox "$@"
     data = data.replace("{chosenPackageType}", chosenPackageType)
     data = data.replace("{binAppPath}", os.path.join(
         binPath, "waterfox-" + lowerChosenPackageType))
+    if re.match(r".*\.AppImage$", sourcePath):
+        data = data.replace("StartupWMClass={wmClass}", "")
+    else:
+        wmClass = "waterfox"
+        if chosenPackageType == "Classic":
+            wmClass = "Waterfox-classic"
+        data = data.replace("{wmClass}", wmClass)
     with open(desktopEntryPath, 'w', encoding='utf-8') as desktopEntry:
         desktopEntry.write(data)
     os.chmod(desktopEntryPath, 0o644)
